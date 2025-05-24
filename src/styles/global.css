@@ -175,7 +175,8 @@ body {
 }
 
 /* Animação de entrada */
-@keyframes slideUp {
+/* Slide In */
+@keyframes slideIn {
   from {
     opacity: 0;
     transform: translateY(30px);
@@ -183,5 +184,17 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Slide Out */
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(30px);
   }
 }

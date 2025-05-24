@@ -20,8 +20,6 @@ const Hero = () => {
           alt="Soluções Digitais" 
         />
       </div>
-      
-
     </section>
   );
 };
