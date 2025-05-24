@@ -16,10 +16,12 @@ const Hero = () => {
         </div>
         <img 
           className="hero-image" 
-          src="/img/eicalouro.png" 
+          src="/img/eicalouro1.png" 
           alt="Soluções Digitais" 
         />
       </div>
+      
+
     </section>
   );
 };

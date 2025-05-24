@@ -8,6 +8,8 @@
   justify-content: center;
   color: white;
   padding: 0 2rem;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .hero-overlay {
@@ -32,6 +34,7 @@
   padding: 0 1rem;
   color: #090016;
   z-index: 2;
+  margin-bottom: -17px;
 }
 
 .hero-text {
@@ -117,46 +120,53 @@
 .hero-image {
   position: relative;
   max-width: 50%; /* Largura máxima da imagem */
-  height: 100%;
-  background-image: url('https://i.postimg.cc/3RvsYjwf/Templete.png'); /* Repetindo a imagem aqui ou pode usar um elemento de imagem real */
+  height: 100%;/* Repetindo a imagem aqui ou pode usar um elemento de imagem real */
   background-size: cover;
   background-position: center;
   border-radius: 8px; /* Se desejar bordas arredondadas na imagem */
+  margin-bottom: 0 !important;
 }
 
 @media (max-width: 768px) {
   .hero-section {
     flex-direction: column;
-    padding: 1rem;
+    padding: 1rem; /* Mantém o padding original */
     height: auto;
+    overflow-x: hidden;
   }
 
   .hero-content {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding: 0 1rem; /* Mantém o padding original */
   }
 
   .hero-text {
-    order: 1; /* Texto vem primeiro */
+    order: 1;
     max-width: 100%;
   }
 
   .hero-buttons {
-    order: 2; /* Botões vêm em seguida */
+    order: 2;
     flex-direction: column;
     width: 100%;
     align-items: center;
-    margin-bottom: 2rem; /* Espaço antes da imagem */
+    margin-bottom: 2rem;
   }
 
   .hero-image {
-    order: 3; /* Imagem vem por último */
-    display: block !important; /* Força a exibição */
-    width: 80%; /* Ajuste conforme necessário */
-    max-width: 300px; /* Limita o tamanho máximo */
-    margin: 0 auto; /* Centraliza */
-    margin-top: 2rem; /* Espaço acima da imagem */
+    order: 3;
+    display: block !important;
+    width: 100vw; /* Faz a imagem ocupar toda a largura da viewport */
+    left: -5%; /* Centraliza a imagem */
+    right: 0%; /* Centraliza a imagem */
+    max-width: none; /* Remove qualquer limitação de largura */
+    border-radius: 0 !important; /* Remove bordas arredondadas */
+    margin-top: 0.5rem; /* Mantém o espaço acima */
+    margin-bottom: 0 !important;
+    overflow: hidden;
+    border-bottom: none;
   }
 
   .hero-content h1 {
@@ -167,8 +177,49 @@
     font-size: 1rem;
   }
 
-  .btn {
+  .hero-content .btn {
     width: 100%;
     text-align: center;
+  }
+}
+
+.virtual-assistant-popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 260px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  animation: slideUp 0.4s ease-out;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.assistant-header {
+  background-color: #20c997;
+  color: white;
+  padding: 8px 12px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  font-size: 14px;
+}
+
+.assistant-body {
+  padding: 12px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

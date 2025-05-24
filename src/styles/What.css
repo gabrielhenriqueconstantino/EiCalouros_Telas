@@ -1,0 +1,14 @@
+.what-section {
+  padding: 2rem 1rem;
+  background-color: #192544;
+  margin-top: 0 !important; /* Garante que não há margem superior */
+}
+
+@media (max-width: 768px) {
+  .what-section {
+    padding: 1rem !important; /* Reduz o padding em mobile */
+    margin-top: 0 !important;
+  }
+}
+
+/*background-color: #302352; */
