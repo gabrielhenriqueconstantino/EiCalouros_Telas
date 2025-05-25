@@ -24,7 +24,7 @@ body {
   background-color: #f3f3f3;
 }
 
-/* Fade-in animation */
+/* Animações */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -42,7 +42,6 @@ body {
   }
 }
 
-/* Slide-in from left */
 .slide-in-left {
   opacity: 0;
   transform: translateX(-50px);
@@ -59,7 +58,6 @@ body {
   }
 }
 
-/* Slide-in from right */
 .slide-in-right {
   opacity: 0;
   transform: translateX(50px);
@@ -76,13 +74,13 @@ body {
   }
 }
 
-/* Button hover scale */
+/* Hover de botão */
 .btn:hover {
   transform: scale(1.05);
   transition: transform 0.3s ease;
 }
 
-/* Container fixo no canto inferior direito */
+/* Assistente virtual fixo */
 .virtual-assistant-container {
   position: fixed;
   bottom: 20px;
@@ -93,7 +91,6 @@ body {
   z-index: 1000;
 }
 
-/* Bolha redonda do robô */
 .assistant-bubble {
   width: 72px;
   height: 72px;
@@ -114,7 +111,7 @@ body {
   height: 50px;
 }
 
-/* Popup estilo balão de fala */
+/* Popup estilo balão */
 .assistant-popup {
   position: relative;
   margin-bottom: 12px;
@@ -131,14 +128,12 @@ body {
   z-index: 1000;
 }
 
-/* Balão ativo */
 .assistant-popup.active {
   opacity: 1;
   visibility: visible;
   transform: scale(1);
 }
 
-/* Setinha do balão apontando para a bolha */
 .assistant-popup::after {
   content: "";
   position: absolute;
@@ -152,7 +147,7 @@ body {
   filter: drop-shadow(0 -1px 1px rgba(0, 0, 0, 0.1));
 }
 
-/* Cabeçalho do popup */
+/* Cabeçalho */
 .assistant-header {
   background-color: #4a90e2;
   color: white;
@@ -162,14 +157,54 @@ body {
   font-size: 14px;
 }
 
-/* Corpo do popup */
+/* Corpo */
 .assistant-body {
   padding: 12px;
   font-size: 14px;
   color: #333;
 }
 
-/* Animação de entrada */
+/* Botões SIM/NÃO */
+.assistant-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.btn-response {
+  background-color: #20c997;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 16px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  flex: 1;
+  margin: 0 4px;
+  white-space: nowrap;
+}
+
+.btn-response:hover {
+  background-color: #17a88c;
+}
+
+/* Opções empilhadas */
+.assistant-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.assistant-options .btn-response {
+  width: 100%;
+  padding: 8px 12px;
+  text-align: center;
+  font-size: 13px;
+}
+
+/* Animações de entrada/saída */
 @keyframes slideIn {
   from {
     opacity: 0;
@@ -181,7 +216,6 @@ body {
   }
 }
 
-/* Animação de saída */
 @keyframes slideOut {
   from {
     opacity: 1;
@@ -192,54 +226,3 @@ body {
     transform: translateY(30px);
   }
 }
-.assistant-buttons {
-  display: flex;
-  justify-content: space-around;
-  padding: 12px;
-  gap: 10px;
-}
-
-.assistant-buttons button {
-  padding: 8px 16px;
-  background-color: #20c997; /* verde */
-  color: white;
-  border: none;
-  border-radius: 999px; /* arredondado tipo pill */
-  cursor: pointer;
-  font-weight: 500;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.assistant-buttons button:hover {
-  background-color: #1aa179; /* verde mais escuro no hover */
-  transform: scale(1.05);
-}
-.assistant-buttons {
-  display: flex;
-  flex-direction: column; /* empilha um abaixo do outro */
-  gap: 10px; /* espaço entre os botões */
-  padding: 12px 0 0 0; /* só espaçamento em cima */
-}
-
-.assistant-buttons button {
-  padding: 8px 16px;
-  background-color: #20c997; /* verde */
-  color: white;
-  border: none;
-  border-radius: 999px; /* arredondado tipo pill */
-  cursor: pointer;
-  font-weight: 500;
-  font-size: 14px;
-  width: 100%; /* botão ocupa toda a largura do container */
-  white-space: normal; /* permite quebra de linha se necessário */
-  text-align: center;
-  box-sizing: border-box;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.assistant-buttons button:hover {
-  background-color: #1aa179; /* verde mais escuro no hover */
-  transform: scale(1.05);
-}
-
-
