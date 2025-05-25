@@ -111,6 +111,95 @@
   font-size: 30px;
 }
 
+.how-help h3 {
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  font-family: 'Poppins', sans-serif;
+  font-size: 30px;
+  text-align: center;
+  margin-right: 450px;
+  margin-top: 50px;
+}
+
+.girl-books {
+  flex: 1;
+  display: flex;
+  justify-content: right;
+  margin-right: 40px;
+  margin-top: -80px;
+}
+
+.girl-books img {
+  width: auto;
+  height: 450px;
+}
+
+.facilities-cards {
+  display: flex;
+  justify-content: left;
+  gap: 2rem;
+  margin-left: 50px;
+  margin-top: -350px;
+}
+
+.facilitie-card {
+  background-color: none;
+  padding: 2rem 1.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid #940499;
+  box-shadow: 0 4px 6px rgba(255, 0, 212, 0.1);
+  width: 170px; /* Largura fixa */
+  height: 170px; /* Altura fixa */
+  font-weight: 600;
+  color: #090016;
+  display: flex;
+  flex-direction: column; /* Altera a direção para coluna */
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+  overflow: hidden; /* Garante que o conteúdo não ultrapasse o card */
+  color: aliceblue;
+}
+
+.facilitie-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 15px rgba(255, 0, 221, 0.384);
+}
+
+.cool {
+  margin-top: 250px;
+  color: aliceblue;
+  text-align: center;
+}
+
+.cool h3 {
+  font-size: 50px;
+  text-shadow: 1px 1px 2px black;
+  font-family: 'Poppins', sans-serif;
+}
+
+.cool p {
+  font-size: 20px;
+  text-shadow: 1px 1px 2px black;
+  font-family: 'Poppins', sans-serif;
+}
+
+.students-pink {
+  display: flex;
+  justify-content: center;
+}
+
+.students-pink img {
+  width: auto;
+  height: 400px;
+  justify-content: center;
+}
+
+
+
 /* Media Queries para dispositivos móveis */
 /* Media Queries para dispositivos móveis */
 @media (max-width: 768px) {
@@ -205,3 +294,4 @@
     padding: 1rem;
   }
 }
+

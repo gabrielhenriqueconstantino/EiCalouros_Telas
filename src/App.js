@@ -3,6 +3,7 @@ import './styles/global.css';
 import Header from './elements/Header';
 import Hero from './elements/Hero';
 import WhatIs from './elements/What.js';
+import Forum from './elements/Forum.js';
 import { useState } from 'react';
 
 function App() {
@@ -73,6 +74,7 @@ function App() {
         <Header />
         <Hero />
         <WhatIs />
+        <Forum />
 
         {/* Assistente Virtual */}
         <div className="virtual-assistant-container">
