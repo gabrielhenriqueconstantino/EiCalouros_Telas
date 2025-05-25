@@ -11,11 +11,18 @@ function App() {
   const [showOptions, setShowOptions] = useState(false);
   const [assistantMessage, setAssistantMessage] = useState("Oi! Precisa de ajuda com a faculdade? 👋");
 
+  const [showScheduleModal, setShowScheduleModal] = useState(false);
+  const [showRaInput, setShowRaInput] = useState(false);
+  const [raValue, setRaValue] = useState("");
+
   const togglePopup = () => {
     setIsPopupVisible(prev => !prev);
     setShowYesNoButtons(true);
     setShowOptions(false);
     setAssistantMessage("Oi! Precisa de ajuda com a faculdade? 👋");
+    setShowScheduleModal(false);
+    setShowRaInput(false);
+    setRaValue("");
   };
 
   const handleYesClick = () => {
@@ -31,7 +38,33 @@ function App() {
       setShowYesNoButtons(true);
       setShowOptions(false);
       setAssistantMessage("Oi! Precisa de ajuda com a faculdade? 👋");
-    }, 2500); // Delay aumentado para 2,5 segundos
+      setShowScheduleModal(false);
+      setShowRaInput(false);
+      setRaValue("");
+    }, 2500);
+  };
+
+  const handleAthonClick = () => {
+    window.open('https://www.athonportal.com.br/', '_blank');
+  };
+
+  const handleScheduleClick = () => {
+    setShowRaInput(true);
+    setShowScheduleModal(false);
+  };
+
+  const handleRaConfirm = () => {
+    if (raValue.trim() !== "") {
+      setShowScheduleModal(true);
+      setShowRaInput(false);
+    } else {
+      alert("Por favor, insira seu R.A.");
+    }
+  };
+
+  const closeScheduleModal = () => {
+    setShowScheduleModal(false);
+    setRaValue("");
   };
 
   return (
@@ -63,13 +96,51 @@ function App() {
 
               {showOptions && (
                 <div className="assistant-options">
-                  <button className="btn-response">Calendário Acadêmico</button>
-                  <button className="btn-response">Grade de Horários</button>
-                  <button className="btn-response">Área Restrita Athon</button>
+                  <button className="btn-response" onClick={() => window.open("https://www.exemplo-calendario.com.br", "_blank")}>
+                    Calendário Acadêmico
+                  </button>
+                  <button className="btn-response" onClick={handleScheduleClick}>
+                    Grade de Horários
+                  </button>
+                  <button className="btn-response" onClick={handleAthonClick}>
+                    Área Restrita Athon
+                  </button>
+                </div>
+              )}
+
+              {showRaInput && (
+                <div className="assistant-options">
+                  <input
+                    type="text"
+                    placeholder="Digite seu R.A"
+                    value={raValue}
+                    onChange={(e) => setRaValue(e.target.value)}
+                    className="ra-input"
+                  />
+                  <button className="btn-response" onClick={handleRaConfirm}>
+                    Confirmar
+                  </button>
                 </div>
               )}
             </div>
           </div>
+
+          {/* Modal da imagem da grade */}
+          {showScheduleModal && (
+            <div className="schedule-modal-overlay" onClick={closeScheduleModal}>
+              <div className="schedule-modal" onClick={e => e.stopPropagation()}>
+                <button className="close-modal-btn" onClick={closeScheduleModal}>×</button>
+                <div className="schedule-header-icon">
+                  <img src="/img/robozinho.gif" alt="Robozinho" />
+                </div>
+                <img
+                  src="/img/HorarioAulas.png"
+                  alt="Grade de Horários"
+                  className="schedule-image"
+                />
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </BrowserRouter>
@@ -77,5 +148,3 @@ function App() {
 }
 
 export default App;
-
-

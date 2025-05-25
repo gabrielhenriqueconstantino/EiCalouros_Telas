@@ -226,3 +226,179 @@ body {
     transform: translateY(30px);
   }
 }
+.schedule-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1100;
+}
+
+/* Moldura do modal */
+.schedule-modal {
+  position: relative;
+  background: white;
+  border-radius: 16px;
+  padding: 16px;
+  max-width: 90vw;
+  max-height: 90vh;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Botão fechar */
+.close-modal-btn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #555;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+.close-modal-btn:hover {
+  color: #20c997; /* verde */
+}
+
+/* Ícone do robozinho no canto superior esquerdo */
+.schedule-header-icon {
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  width: 40px;
+  height: 40px;
+}
+.schedule-header-icon img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.schedule-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1100;
+}
+
+.schedule-modal {
+  position: relative;
+  background: transparent; /* sem fundo branco */
+  border-radius: 0; /* sem borda arredondada */
+  padding: 0; /* sem espaçamento */
+  max-width: 90vw;
+  max-height: 90vh;
+  box-shadow: none; /* sem sombra */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white; /* branco pra ficar visível sobre a imagem */
+  font-weight: bold;
+  transition: color 0.2s ease;
+  z-index: 1200;
+}
+
+.close-modal-btn:hover {
+  color: #20c997;
+}
+
+.schedule-header-icon {
+  display: none; /* esconde o robozinho, se quiser */
+}
+
+/* Imagem ocupa até 90% da largura e altura da viewport */
+.schedule-modal {
+  position: relative;
+  background: rgba(255, 255, 255, 0.85); /* leve fundo branco translúcido */
+  border-radius: 8px; /* leve arredondamento */
+  padding: 12px 16px 16px 16px;
+  max-width: 90vw;
+  max-height: 90vh;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25); /* sombra suave */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.schedule-header-icon {
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  width: 32px;  /* menor que antes */
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 1101;
+}
+
+.schedule-header-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.schedule-image {
+  max-width: 175%;
+  max-height: 300vh;
+  object-fit: contain;
+  border-radius: 4px;
+  display: block;
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #333; /* cor escura para contraste no fundo claro */
+  font-weight: bold;
+  transition: color 0.2s ease;
+  z-index: 1102;
+}
+
+.close-modal-btn:hover {
+  color: #20c997;
+}
+/* Campo de entrada do R.A. */
+.ra-input {
+  padding: 8px 12px;
+  border-radius: 16px;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  width: 100%;
+  margin-bottom: 8px;
+  outline: none;
+}
+
+
+
+
