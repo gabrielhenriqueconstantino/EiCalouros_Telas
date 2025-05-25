@@ -19,6 +19,24 @@
   display: flex;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* espaço entre imagem, barra e texto */
+}
+
+.logo img {
+  width: auto;
+  height: 54px;
+}
+
+.divider {
+  width: 2px;
+  height: 60px;
+  background-color: white;
+  margin: 0 0.5rem;
+}
+
 .logo a {
   color: white;
   font-weight: bolder;
@@ -136,4 +154,27 @@
   .nav-links li a.active {
   color: rgb(245, 210, 10); /* amarelo destaque */
   }
+
+
+  .logo img {
+  width: auto;
+  height: 25px;
+}
+
+.divider {
+  width: 2px;
+  height: 30px;
+  background-color: white;
+  margin: 0 0.5rem;
+}
+
+.logo a {
+  color: white;
+  font-weight: bolder;
+  font-size: 1.4rem;
+  text-decoration: none;
+  font-family: "Shadows Into Light Two", cursive;
+  transition: transform 0.3s ease;
+  display: inline-block; /* necessário para aplicar transform corretamente */
+}
 }

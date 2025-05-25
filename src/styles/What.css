@@ -1,37 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 .what-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start; /* alinha ao topo */
-  padding: 2rem 1rem;
+  position: relative; /* necessário para o posicionamento absoluto funcionar */
+  height: auto; /* altura total da seção */
   background-color: #192544;
-  flex-wrap: wrap; /* para mobile */
-  gap: 2rem;
-}
-
-
-
-.main h2,
-.main p {
-  color: aliceblue;
-}
-
-@media (max-width: 768px) {
-  .what-section {
-    padding: 1rem !important; /* Reduz o padding em mobile */
-    margin-top: 0 !important;
-  }
+  overflow: hidden;
 }
 
 .main-img {
   flex: 1;
   display: flex;
   justify-content: flex-end;
-  margin-right: 150px;
-  margin-top: -150px;
-}
-
-.main-img img{
-  max-width: auto;
-  height: 600px;
+  margin-right: 40px;
   margin-top: -80px;
 }
+
+.main-img img {
+  height: auto;
+  width: 650px;
+  object-fit: cover;
+  opacity: 0.9; /* escurece a imagem para melhor legibilidade do texto */
+}
+
+.main {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  z-index: 2;
+  max-width: 600px;
+}
+
+.main h2 {
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  font-family: 'Poppins', sans-serif;
+  font-size: 40px;
+}
+
+.main p {
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.solutions {
+  margin-top: -38px;
+}
+
+
+.solutions-cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-left: 450px;
+}
+
+.solution-card {
+  background-color: #20c997;
+  padding: 2rem 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+  width: 160px; /* Largura fixa */
+  height: 160px; /* Altura fixa */
+  font-weight: 600;
+  color: #090016;
+  display: flex;
+  flex-direction: column; /* Altera a direção para coluna */
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+  overflow: hidden; /* Garante que o conteúdo não ultrapasse o card */
+  margin-top: 35px;
+  color: aliceblue;
+}
+
+.icon {
+  margin-bottom: 1rem; /* Aumenta o espaçamento abaixo do ícone */
+  color: #0d5aff;
+}
+
+.solution-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 15px rgba(255, 255, 255, 0.2);
+}
+
+.girl-img {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: -20px;
+  margin-top: -270px;
+}
+
+.girl-img img{
+    height: auto;
+    width: 500px;
+    object-fit: cover;
+    opacity: 0.9; /* escurece a imagem para melhor legibilidade do texto */
+}
+
+.text h3 {
+  color: aliceblue;
+  text-align: right;
+  margin-right: 195px;
+  font-size: 30px;
+}
+

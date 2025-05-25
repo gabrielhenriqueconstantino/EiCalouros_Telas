@@ -14,7 +14,9 @@ const Header = () => {
     <header className="header">
       <nav className="nav">
         <div className="logo">
-          <Link to="/">Ei, Calouro!</Link>
+          <img src="https://athonedu.com.br/wp-content/uploads/2025/05/logo-c.webp" alt="Logo" />
+        <div className="divider" />
+        <Link to="/">Ei, Calouro!</Link>
         </div>
           
         <div className="hamburger" onClick={toggleMenu}>
