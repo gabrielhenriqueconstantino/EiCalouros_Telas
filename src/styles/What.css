@@ -111,3 +111,97 @@
   font-size: 30px;
 }
 
+/* Media Queries para dispositivos móveis */
+/* Media Queries para dispositivos móveis */
+@media (max-width: 768px) {
+  .what-section {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main {
+    position: static;
+    max-width: 100%;
+    margin-bottom: 20px;
+    order: 1; /* Garante que fique primeiro */
+  }
+
+  .main-img {
+    order: 2; /* Coloca a imagem dos estudantes logo após o main */
+    margin: 20px 0 0 0;
+    justify-content: center;
+  }
+
+  .main-img img {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .main h2 {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .main p {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .solutions {
+    order: 3; /* Coloca a seção de soluções depois da imagem */
+    margin-top: 20px;
+  }
+
+  .solutions-cards {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+    gap: 1rem;
+  }
+
+  .solution-card {
+    width: 80%;
+    height: auto;
+    padding: 1.5rem;
+    margin-top: 10px;
+  }
+
+  .girl-img {
+    order: 4; /* Mantém a imagem da garota por último */
+    margin: 20px 0 0 0;
+    justify-content: center;
+  }
+
+  .girl-img img {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .text h3 {
+    text-align: center;
+    margin-right: 0;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 480px) {
+  .main h2 {
+    font-size: 24px;
+  }
+
+  .main p {
+    font-size: 14px;
+  }
+
+  .text h3 {
+    font-size: 20px;
+  }
+
+  .solution-card {
+    width: 90%;
+    padding: 1rem;
+  }
+}
