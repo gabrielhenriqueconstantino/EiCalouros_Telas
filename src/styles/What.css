@@ -1,7 +1,18 @@
 .what-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* alinha ao topo */
   padding: 2rem 1rem;
   background-color: #192544;
-  margin-top: 0 !important; /* Garante que não há margem superior */
+  flex-wrap: wrap; /* para mobile */
+  gap: 2rem;
+}
+
+
+
+.main h2,
+.main p {
+  color: aliceblue;
 }
 
 @media (max-width: 768px) {
@@ -11,4 +22,16 @@
   }
 }
 
-/*background-color: #302352; */
+.main-img {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 150px;
+  margin-top: -150px;
+}
+
+.main-img img{
+  max-width: auto;
+  height: 600px;
+  margin-top: -80px;
+}
