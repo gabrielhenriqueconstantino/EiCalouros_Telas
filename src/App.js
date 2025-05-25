@@ -7,9 +7,31 @@ import { useState } from 'react';
 
 function App() {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
+  const [showYesNoButtons, setShowYesNoButtons] = useState(true);
+  const [showOptions, setShowOptions] = useState(false);
+  const [assistantMessage, setAssistantMessage] = useState("Oi! Precisa de ajuda com a faculdade? 👋");
 
   const togglePopup = () => {
     setIsPopupVisible(prev => !prev);
+    setShowYesNoButtons(true);
+    setShowOptions(false);
+    setAssistantMessage("Oi! Precisa de ajuda com a faculdade? 👋");
+  };
+
+  const handleYesClick = () => {
+    setShowYesNoButtons(false);
+    setShowOptions(true);
+    setAssistantMessage("Escolha uma opção:");
+  };
+
+  const handleNoClick = () => {
+    setAssistantMessage("Poxa, que pena! Se mudar de ideia, estarei aqui 😢");
+    setTimeout(() => {
+      setIsPopupVisible(false);
+      setShowYesNoButtons(true);
+      setShowOptions(false);
+      setAssistantMessage("Oi! Precisa de ajuda com a faculdade? 👋");
+    }, 2500); // Delay aumentado para 2,5 segundos
   };
 
   return (
@@ -30,7 +52,22 @@ function App() {
               <strong>Athena</strong>
             </div>
             <div className="assistant-body">
-              <p>Oi! Precisa de ajuda com a faculdade? 👋</p>
+              <p>{assistantMessage}</p>
+
+              {showYesNoButtons && (
+                <div className="assistant-buttons">
+                  <button className="btn-response" onClick={handleYesClick}>Sim</button>
+                  <button className="btn-response" onClick={handleNoClick}>Não</button>
+                </div>
+              )}
+
+              {showOptions && (
+                <div className="assistant-options">
+                  <button className="btn-response">Calendário Acadêmico</button>
+                  <button className="btn-response">Grade de Horários</button>
+                  <button className="btn-response">Área Restrita Athon</button>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -40,4 +77,5 @@ function App() {
 }
 
 export default App;
+
 

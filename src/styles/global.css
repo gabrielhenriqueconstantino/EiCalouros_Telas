@@ -15,18 +15,14 @@ body {
   overflow-x: hidden;
 }
 
-
-
 /* Tons alternados de branco para seções */
 .bg-white-100 {
-  background-color: #f8f8f8; /* Branco puro */
+  background-color: #f8f8f8;
 }
 
 .bg-white-200 {
-  background-color: #f3f3f3; /* Branco um pouco acinzentado */
+  background-color: #f3f3f3;
 }
-
-
 
 /* Fade-in animation */
 .fade-in {
@@ -92,7 +88,7 @@ body {
   bottom: 20px;
   right: 20px;
   display: flex;
-  flex-direction: column-reverse; /* bolha abaixo do popup */
+  flex-direction: column-reverse;
   align-items: flex-end;
   z-index: 1000;
 }
@@ -142,7 +138,6 @@ body {
   transform: scale(1);
 }
 
-
 /* Setinha do balão apontando para a bolha */
 .assistant-popup::after {
   content: "";
@@ -175,7 +170,6 @@ body {
 }
 
 /* Animação de entrada */
-/* Slide In */
 @keyframes slideIn {
   from {
     opacity: 0;
@@ -187,7 +181,7 @@ body {
   }
 }
 
-/* Slide Out */
+/* Animação de saída */
 @keyframes slideOut {
   from {
     opacity: 1;
@@ -198,3 +192,54 @@ body {
     transform: translateY(30px);
   }
 }
+.assistant-buttons {
+  display: flex;
+  justify-content: space-around;
+  padding: 12px;
+  gap: 10px;
+}
+
+.assistant-buttons button {
+  padding: 8px 16px;
+  background-color: #20c997; /* verde */
+  color: white;
+  border: none;
+  border-radius: 999px; /* arredondado tipo pill */
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.assistant-buttons button:hover {
+  background-color: #1aa179; /* verde mais escuro no hover */
+  transform: scale(1.05);
+}
+.assistant-buttons {
+  display: flex;
+  flex-direction: column; /* empilha um abaixo do outro */
+  gap: 10px; /* espaço entre os botões */
+  padding: 12px 0 0 0; /* só espaçamento em cima */
+}
+
+.assistant-buttons button {
+  padding: 8px 16px;
+  background-color: #20c997; /* verde */
+  color: white;
+  border: none;
+  border-radius: 999px; /* arredondado tipo pill */
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  width: 100%; /* botão ocupa toda a largura do container */
+  white-space: normal; /* permite quebra de linha se necessário */
+  text-align: center;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.assistant-buttons button:hover {
+  background-color: #1aa179; /* verde mais escuro no hover */
+  transform: scale(1.05);
+}
+
+
