@@ -198,67 +198,91 @@
   justify-content: center;
 }
 
+/* ... (mantenha todo o CSS desktop existente) ... */
 
-
-/* Media Queries para dispositivos móveis */
 /* Media Queries para dispositivos móveis */
 @media (max-width: 768px) {
+  
+  /* Reorganização completa da ordem */
+  .main { order: 1; }
+  .main-img { order: 2; }
+  .solutions { order: 3; }
+  .girl-img { order: 4; }
+  .how-help h3 { order: 5; }
+  .facilities-cards { order: 6; }
+  .girl-books { order: 7; }
+  .cool { order: 8; }
+  .students-pink { order: 9; }
+  
   .what-section {
     padding: 20px;
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 
+  /* Seção "O que é?" */
   .main {
     position: static;
     max-width: 100%;
-    margin-bottom: 20px;
-    order: 1; /* Garante que fique primeiro */
+    margin: 0;
+    order: 1;
+    text-align: center;
   }
 
+  .main h2 {
+    font-size: 28px;
+  }
+
+  .main p {
+    font-size: 16px;
+  }
+
+  /* Imagem dos estudantes */
   .main-img {
-    order: 2; /* Coloca a imagem dos estudantes logo após o main */
-    margin: 20px 0 0 0;
+    order: 2;
+    margin: 20px 0;
     justify-content: center;
   }
 
   .main-img img {
     width: 100%;
     max-width: 400px;
+    height: auto;
+    margin-top: -80px;
   }
 
-  .main h2 {
-    font-size: 30px;
-    text-align: center;
-  }
-
-  .main p {
-    font-size: 16px;
-    text-align: center;
-  }
-
+  /* Seção "O que você vai encontrar" */
   .solutions {
-    order: 3; /* Coloca a seção de soluções depois da imagem */
-    margin-top: 20px;
+    order: 3;
+    margin-top: -40px;
+    width: 100%;
+  }
+
+  .text h3 {
+    text-align: center;
+    margin-right: 0;
+    font-size: 24px;
   }
 
   .solutions-cards {
     flex-direction: column;
-    align-items: center;
     margin-left: 0;
-    gap: 1rem;
+    gap: 15px;
+    align-items: center;
   }
 
   .solution-card {
-    width: 80%;
+    width: 90%;
     height: auto;
-    padding: 1.5rem;
-    margin-top: 10px;
+    padding: 20px;
+    margin-top: 0;
   }
 
+  /* Imagem da garota */
   .girl-img {
-    order: 4; /* Mantém a imagem da garota por último */
-    margin: 20px 0 0 0;
+    order: 4;
+    margin: 30px 0;
     justify-content: center;
   }
 
@@ -267,15 +291,81 @@
     max-width: 300px;
   }
 
-  .text h3 {
+
+  .how-help {
+  order: 5;
+  width: 100%;
+  text-align: center;
+  margin: 30px 0 15px 0;
+}
+  /* Ajustes específicos para o texto "E como isso vai te ajudar?" */
+  .how-help h3 {
     text-align: center;
-    margin-right: 0;
+    margin: 30px 0 15px 0;
     font-size: 24px;
-    margin-bottom: 20px;
+    width: 100%;
+    margin-right: 0; /* Remove o margin-right do desktop */
+    margin-top: -40px;
+  }
+
+  /* Ajustes para a imagem girl-books */
+  .girl-books {
+    margin: 20px 0;
+    justify-content: center;
+  }
+
+  .girl-books img {
+    height: auto;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* Cards de facilidades */
+  /* Ajustes para os cards de facilidades */
+  .facilities-cards {
+    flex-direction: column;
+    margin: 0 0 20px 0;
+    gap: 15px;
+    align-items: center;
+    justify-content: center; /* Centraliza os cards */
+  }
+
+  .facilitie-card {
+    width: 90%;
+    height: auto;
+    padding: 20px;
+    margin: 0;
+  }
+
+  /* Seção "Muito legal, né?" */
+  .cool {
+    order: 8;
+    margin: 40px 0 20px 0;
+    text-align: center;
+  }
+
+  .cool h3 {
+    font-size: 28px;
+  }
+
+  .cool p {
+    font-size: 16px;
+  }
+
+  /* Imagem final dos estudantes */
+  .students-pink {
+    order: 9;
+    margin: 20px 0;
+  }
+
+  .students-pink img {
+    height: auto;
+    width: 100%;
+    max-width: 350px;
   }
 }
 
-/* Ajustes para telas muito pequenas */
+/* Ajustes para telas muito pequenas (menos de 480px) */
 @media (max-width: 480px) {
   .main h2 {
     font-size: 24px;
@@ -285,13 +375,22 @@
     font-size: 14px;
   }
 
-  .text h3 {
+  .text h3,
+  .how-help h3 {
     font-size: 20px;
   }
 
-  .solution-card {
-    width: 90%;
-    padding: 1rem;
+  .cool h3 {
+    font-size: 24px;
+  }
+
+  .cool p {
+    font-size: 14px;
+  }
+
+  .solution-card,
+  .facilitie-card {
+    width: 95%;
+    padding: 15px;
   }
 }
-
