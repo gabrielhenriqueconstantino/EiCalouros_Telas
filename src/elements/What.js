@@ -50,7 +50,7 @@ const What = () => {
           <h3>E como isso vai te ajudar?</h3>
         </div>
         <div className='girl-books'>
-            <img src='./img/girl_and_books.png'></img>
+            <img src='./img/girl_and_books.png' alt='girl and books'></img>
         </div>
          <div className="facilities-cards">
           {facilities.map((service) => (
@@ -66,7 +66,7 @@ const What = () => {
         </div>
 
         <div className='students-pink'>
-          <img src='./img/students_final.png'></img>
+          <img src='./img/students_final.png' alt='image final'></img>
         </div>
         
     </section>
