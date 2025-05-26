@@ -66,7 +66,7 @@ const What = () => {
         </div>
 
         <div className='students-pink'>
-          <img src='./img/students_final.png' alt='image final'></img>
+          <img src='./img/students_final.png' alt='Estudantes'></img>
         </div>
         
     </section>
