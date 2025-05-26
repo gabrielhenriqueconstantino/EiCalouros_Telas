@@ -1,0 +1,73 @@
+.agenda {
+    background: rgb(233, 233, 233);
+    height: auto;
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: space-around; /* Espaço ao redor dos elementos */
+    padding: 20px; /* Espaçamento interno */
+}
+
+.banner {
+    margin-top: -390px;
+    background: -webkit-linear-gradient(0deg, rgba(13, 128, 113, 1) 0%, rgba(13, 128, 113, 1) 33%, rgba(117, 36, 114, 1) 66%, rgba(117, 36, 114, 1) 100%);;
+    width: 75%;
+    height: 100px;
+    z-index: 2;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.438);
+    margin-left: -2%;
+    clip-path: polygon(0 0, 100% 0, 100% 1px, 90% 100%, 0% 100%);
+     /* Espaçamento interno à direita */
+    display: flex;
+    align-items: center;        /* Centraliza verticalmente */
+    justify-content: center;    /* Centraliza horizontalmente */
+    text-align: center;     
+}
+
+.banner-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    color: aliceblue; /* Contraste com o amarelo */
+
+
+}
+
+.eventos-text {
+    flex: 2; /* Ocupa o espaço disponível */
+    text-align: right;
+    margin-right: 20px; /* Margem direita */
+    font-family: 'Poppins', sans-serif;
+    color: aliceblue;
+    margin-top: -400px;
+    font-size: 25px;
+    z-index: 1;
+}
+
+.girl-jumping {
+    flex: 1; /* Ocupa o espaço disponível */
+    display: flex;
+    justify-content: left; /* Alinha a imagem à direita do espaço disponível */
+    margin-left: 100px; /* Margem esquerda */
+}
+
+.girl-jumping img {
+    max-width: auto; /* Imagem responsiva */
+    height: 450px;
+    object-fit: cover; /* Ajusta a imagem ao contêiner */
+    margin-left: 150px;
+    margin-top: 0px;
+    z-index: 2;
+}
+
+.yellow-container {
+    margin-top: 150px;
+    position: absolute;
+    background: linear-gradient(135deg, rgba(252, 185, 0, 1)); /* amarelo destaque */;
+    width: 100vw;
+    height: 100px;
+    z-index: 1; /* fica atrás da imagem */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
