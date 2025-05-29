@@ -101,7 +101,7 @@ const Agenda = () => {
   useEffect(() => {
     if (carrosselRef.current && wrapperRef.current) {
       const cardWidth = carrosselRef.current.children[0]?.offsetWidth + 20;
-      const wrapperWidth = wrapperRef.current.offsetWidth;
+      //const wrapperWidth = wrapperRef.current.offsetWidth;
       
       // Calcula a posição para alinhar o card atual à esquerda
       const newPosition = -(currentIndex * cardWidth);
