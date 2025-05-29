@@ -53,7 +53,7 @@ const Forum = () => {
     const post = {
       id: posts.length + 1,
       author: 'Você',
-      avatar: 'https://i.pravatar.cc/50?img=68',
+      avatar: './img/gigachad.jpg',
       category: 'Dúvidas',
       content: newPost,
       likes: 0,
