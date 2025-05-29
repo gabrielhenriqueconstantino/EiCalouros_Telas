@@ -1,34 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 .agenda {
     background: rgb(233, 233, 233);
     height: auto;
     display: flex;
-    align-items: center; /* Centraliza verticalmente */
-    justify-content: space-around; /* Espaço ao redor dos elementos */
-    padding: 20px; /* Espaçamento interno */
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    
 }
 
 .banner {
-    margin-top: -390px;
+    margin-top: -20px;
     background: -webkit-linear-gradient(0deg, rgba(13, 128, 113, 1) 0%, rgba(13, 128, 113, 1) 33%, rgba(117, 36, 114, 1) 66%, rgba(117, 36, 114, 1) 100%);;
     width: 75%;
     height: 100px;
     z-index: 2;
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.438);
-    margin-left: -2%;
+    margin-left: -100vh;
     clip-path: polygon(0 0, 100% 0, 100% 1px, 90% 100%, 0% 100%);
-     /* Espaçamento interno à direita */
     display: flex;
-    align-items: center;        /* Centraliza verticalmente */
-    justify-content: center;    /* Centraliza horizontalmente */
-    text-align: center;     
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .banner-text {
     font-family: 'Poppins', sans-serif;
     font-size: 24px;
     color: aliceblue; /* Contraste com o amarelo */
+}
 
+.carrossel-container {
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 40px;
+    margin-left: 0;           /* Garante que não há margem à esquerda */
+    margin-right: auto;       /* Faz com que a div se alinhe à esquerda */
+    z-index: 1;
+    overflow-x: auto;
+    position: relative;
+    padding: 20px 0;
+    -webkit-overflow-scrolling: touch;
+    display: flex;            /* Necessário para justify-content funcionar */
+    justify-content: flex-start; /* Alinha conteúdo interno à esquerda */
+    cursor: pointer;
+    
+}
 
+.carrossel-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin-top: -430px;
+    margin-bottom: 40px;
+    margin-left: 0;
+    margin-right: auto;
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+    padding-left: 20px; /* Espaço para alinhar o primeiro card */
+}
+
+.carrossel {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease;
+    will-change: transform;
+}
+
+.evento-card {
+    width: max-content;
+    height: 350px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    display: flex;
+    transition: all 0.3s ease;
+    flex-shrink: 0; /* Impede que os cards encolham */
+}
+
+.evento-card.current {
+    z-index: 2;
+}
+
+.evento-card.next {
+    opacity: 0.6;
+    transform: translateX(-30px);
+    z-index: 1;
+    position: relative;
+}
+
+.evento-card.next::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    opacity: 0.5;
+    z-index: 2;
+}
+
+.slide-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.slide-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+.slide-indicator.active {
+    background-color: #0d8071;
 }
 
 .eventos-text {
@@ -42,24 +134,131 @@
     z-index: 1;
 }
 
+.evento-card {
+    width: 600px;
+    height: 350px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    display: flex;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.evento-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.evento-imagem-container {
+    width: 40%;
+    position: relative;
+    overflow: hidden;
+    zoom: -100%;
+}
+
+.evento-imagem {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-right: 4px solid #FCB900;
+    transition: transform 0.5s ease;
+}
+
+.evento-card:hover .evento-imagem {
+    transform: scale(1.05);
+}
+
+.evento-conteudo {
+    width: 60%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.evento-titulo {
+    margin: 0 0 10px 0;
+    color: #1f1f1f;
+    font-size: 1.3rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.evento-escolas {
+    margin-bottom: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.escola-tag {
+    background: #20c997;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+}
+
+.evento-info {
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+    color: #555;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+.evento-info p {
+    margin: 5px 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.evento-descricao {
+    flex-grow: 1;
+    font-size: 0.9rem;
+    color: #666;
+    margin: 8px 0;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    font-family: 'Poppins', sans-serif;
+    white-space: pre-line;
+}
+
+.inscrever-btn {
+    align-self: flex-start;
+    background: -webkit-linear-gradient(0deg, rgba(13, 128, 113, 1) 0%, rgba(13, 128, 113, 1) 33%, rgba(117, 36, 114, 1) 66%, rgba(117, 36, 114, 1) 100%);;
+    border: none;
+    padding: 8px 24px;
+    border-radius: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: auto;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+}
+
+
 .girl-jumping {
     flex: 1; /* Ocupa o espaço disponível */
     display: flex;
     justify-content: left; /* Alinha a imagem à direita do espaço disponível */
-    margin-left: 100px; /* Margem esquerda */
+    margin-right: 50px; /* Margem esquerda */
 }
 
 .girl-jumping img {
     max-width: auto; /* Imagem responsiva */
-    height: 450px;
+    height: 550px;
     object-fit: cover; /* Ajusta a imagem ao contêiner */
-    margin-left: 150px;
-    margin-top: 0px;
+    margin-left: 900px;
+    margin-top: -100px;
     z-index: 2;
 }
 
 .yellow-container {
-    margin-top: 150px;
+    margin-top: 470px;
     position: absolute;
     background: linear-gradient(135deg, rgba(252, 185, 0, 1)); /* amarelo destaque */;
     width: 100vw;
@@ -68,6 +267,83 @@
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* Responsividade para telas menores */
+@media screen and (max-width: 1024px) {
+  .banner {
+    width: 90%;
+    margin-left: 0;
+    clip-path: none;
+    height: auto;
+    padding: 20px;
+  }
 
+  .girl-jumping {
+    justify-content: center;
+    margin: 0;
+  }
 
+  .girl-jumping img {
+    height: 300px;
+    margin: 0;
+  }
+
+  .carrossel-wrapper {
+    margin-top: 20px;
+    padding: 0 10px;
+  }
+
+  .evento-card {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
+
+  .evento-imagem-container {
+    width: 100%;
+    height: 200px;
+  }
+
+  .evento-imagem {
+    border-right: none;
+    border-bottom: 4px solid #FCB900;
+  }
+
+  .evento-conteudo {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .evento-titulo {
+    font-size: 1.1rem;
+  }
+
+  .evento-descricao {
+    display: block;
+    -webkit-box-orient: unset;
+    white-space: normal;
+  }
+
+  .inscrever-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .banner-text {
+    font-size: 18px;
+  }
+
+  .evento-titulo {
+    font-size: 1rem;
+  }
+
+  .evento-info, .evento-descricao {
+    font-size: 0.85rem;
+  }
+
+  .escola-tag {
+    font-size: 0.8rem;
+  }
+}
 
