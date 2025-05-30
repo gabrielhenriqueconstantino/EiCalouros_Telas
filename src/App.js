@@ -5,6 +5,7 @@ import Hero from './elements/Hero';
 import WhatIs from './elements/What.js';
 import Forum from './elements/Forum.js';
 import Agenda from './elements/Agenda.js';
+import Footer from './elements/Footer.js';
 import { useState } from 'react';
 
 function App() {
@@ -77,6 +78,7 @@ function App() {
         <WhatIs />
         <Forum />
         <Agenda />
+        <Footer />
 
         {/* Assistente Virtual */}
         <div className="virtual-assistant-container">

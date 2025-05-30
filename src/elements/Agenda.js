@@ -140,31 +140,66 @@ const Agenda = () => {
   };
 
   return (
-    <section className="agenda">
-      <div className='banner'>
-        <h3 className="banner-text">Confira os Próximos eventos da Athon!</h3>
-      </div>
-      
-      <div className='girl-jumping'>
-        <img src='./img/garota-pulando.png' alt='girl_jumping'></img>
-      </div>
+  <section className="agenda">
+    <div className='banner'>
+      <h3 className="banner-text">Confira os Próximos eventos da Athon!</h3>
+    </div>
+    
+    <div className='girl-jumping'>
+      <img src='./img/garota-pulando.png' alt='girl_jumping'></img>
+    </div>
 
-      <div className='yellow-container'></div>
+    <div className='yellow-container'></div>
 
-      <div className='carrossel-wrapper' ref={wrapperRef}>
-        <div className='carrossel' ref={carrosselRef} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-          {eventos.map((evento, index) => (
-            <EventoCard 
-              key={evento.id} 
-              evento={evento} 
-              isCurrent={index === currentIndex}
-              isNext={index === (currentIndex + 1) % eventos.length}
-            />
-          ))}
+    <div className='carrossel-wrapper' ref={wrapperRef}>
+      <div className='carrossel' ref={carrosselRef} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        {eventos.map((evento, index) => (
+          <EventoCard 
+            key={evento.id} 
+            evento={evento} 
+            isCurrent={index === currentIndex}
+            isNext={index === (currentIndex + 1) % eventos.length}
+          />
+        ))}
+      </div>
+    </div>
+
+    <div className='duvidas-eventos'>
+      <div className='duvidas-content'>
+        <div className='girl-duvidas'>
+          <img src='./img/girl-duvidas.png' alt='Dúvidas sobre eventos'></img>
+        </div>
+        
+        <div className="form-wrapper">
+          <div className="form-container">
+            <h2 className="form-title">Dúvidas sobre os eventos?<br />Entre em contato!</h2>
+            <form className="contact-form" action="#" method="post">
+  <div className="form-columns">
+    <div className="form-left">
+      <div className="form-group">
+        <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required />
+      </div>
+      <div className="form-group">
+        <input type="email" id="email" name="email" placeholder="Seu melhor e-mail" required />
+      </div>
+      <div className="form-group">
+        <input type="tel" id="telefone" name="telefone" placeholder="Telefone (opcional)" />
+      </div>
+    </div>
+    <div className="form-right">
+      <div className="form-group">
+        <textarea className='textarea' id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem aqui..." required></textarea>
+      </div>
+    </div>
+  </div>
+  <button type="submit" className="submit-btn">Enviar Mensagem</button>
+</form>
+          </div>
         </div>
       </div>
-    </section>
-  );
+    </div>
+  </section>
+);
 };
 
 const EventoCard = ({ evento, isCurrent, isNext }) => {

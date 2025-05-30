@@ -190,6 +190,7 @@
     flex-wrap: wrap;
     gap: 8px;
     font-family: 'Poppins', sans-serif;
+    font-weight: bold;
 }
 
 .escola-tag {
@@ -255,6 +256,7 @@
     margin-left: 900px;
     margin-top: -100px;
     z-index: 2;
+    
 }
 
 .yellow-container {
@@ -265,6 +267,127 @@
     height: 100px;
     z-index: 1; /* fica atrás da imagem */
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.duvidas-eventos {
+  background-image: url('https://athonedu.com.br/wp-content/themes/athon/assets/eventos/images/bg-eventos-form.png');
+  width: 100%;
+  height: auto;
+  background-size: cover; /* Faz com que a imagem cubra toda a div */
+  background-position: center; /* Centraliza a imagem de fundo */
+  position: relative; /* Necessário se você quiser posicionar elementos internos depois */
+  padding: 50px; /* Espaçamento interno para não colar a imagem no topo */
+}
+
+
+.girl-duvidas img {
+  width: auto;
+  height: 525px;
+  display: flex; /* Remove espaçamento extra abaixo da imagem */
+  position: relative; /* Garante que fique sobre o background */
+  z-index: 1; /* Garante que fique acima do fundo */
+  justify-content: left;
+  top: 108px;
+}
+
+.form-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form-container {
+  width: 700px;
+  height: 450px;
+  background: white;
+  padding: 50px;
+  padding-top: 10px;
+  border-radius: 20px;
+  position: relative;
+  z-index: 2;
+  margin-top: -412px;
+}
+
+.form-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  color: #1f1f1f;
+  margin-bottom: 20px;
+  font-weight: 700;
+  line-height: 1;
+  background: linear-gradient(90deg, #0d8071, #752472);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.form-columns {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.form-left,
+.form-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%; /* Altere de 50% para 100% */
+  padding: 15px 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.textarea {
+  height: 131%;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #0d8071;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(13, 128, 113, 0.2);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.submit-btn {
+  background: linear-gradient(90deg, #0d8071, #752472);
+  color: white;
+  border: none;
+  padding: 16px 30px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  width: 50%;
+}
+
+.submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Responsividade para telas menores */
