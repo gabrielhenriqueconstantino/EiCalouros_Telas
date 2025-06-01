@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback, touchStartX, setTouchStartX, isNext } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import '../styles/Agenda.css';
 
 const eventos = [
