@@ -11,8 +11,47 @@
     
 }
 
+.palestra-img {
+  display: flex;
+  margin: 0;
+  top: -10;
+}
+
+.palestra-img img{
+    width: 100vw;
+    margin-top: -19px;
+    filter: brightness(30%); /* Ajuste o valor (0% a 100%) para controlar o escurecimento */
+}
+
+.palestra-img-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  color: white;
+  text-align: center;
+  width: 80%;
+  max-width: 800px;
+  margin-top: -550px;
+}
+
+.palestra-img-content h2 {
+  font-size: 2.7rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-family: 'Poppins', sans-serif;
+}
+
+.palestra-img-content p {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  font-family: 'Poppins', sans-serif;
+}
+
 .banner {
-    margin-top: -20px;
+    margin-top: 0px;
     background: -webkit-linear-gradient(0deg, rgba(13, 128, 113, 1) 0%, rgba(13, 128, 113, 1) 33%, rgba(117, 36, 114, 1) 66%, rgba(117, 36, 114, 1) 100%);;
     width: 75%;
     height: 100px;
@@ -260,7 +299,7 @@
 }
 
 .yellow-container {
-    margin-top: 470px;
+    margin-top: 1240px;
     position: absolute;
     background: linear-gradient(135deg, rgba(252, 185, 0, 1)); /* amarelo destaque */;
     width: 100vw;
@@ -390,45 +429,98 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Responsividade para telas menores */
-@media screen and (max-width: 1024px) {
-  .banner {
+/* ============ MEDIA QUERIES - VERSÃO MOBILE ============ */
+
+@media (max-width: 768px) {
+ .agenda {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .palestra-img {
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    min-height: 200px; 
+
+  }
+
+  .palestra-img img {
+    max-width: 100vw;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    filter: brightness(70%); /* <<< Sugestão: manter contraste com o texto */
+    overflow-x: hidden;
+  }
+
+  .palestra-img-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 90%;
+    text-align: center;
+    z-index: 2;
+    padding: 0;
+    margin: 0;
+  }
+
+  .palestra-img-content h2 {
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .palestra-img-content p {
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
+  .banner {
+    width: 110vh;
+    height: auto;
     margin-left: 0;
     clip-path: none;
-    height: auto;
-    padding: 20px;
+    order: 2;
+    width: 100%;
+    margin: 20px 0;
+    clip-path: none;
+    margin: 0;
+    margin-bottom: 25px;
   }
 
-  .girl-jumping {
-    justify-content: center;
-    margin: 0;
-  }
-
-  .girl-jumping img {
-    height: 300px;
-    margin: 0;
+  .banner-text {
+    font-size: 1.2rem;
+    padding: 0 15px;
   }
 
   .carrossel-wrapper {
     margin-top: 20px;
-    padding: 0 10px;
+    padding-left: 10px;
+     order: 3;
+    margin-top: 0;
   }
 
   .evento-card {
-    flex-direction: column;
-    width: 100%;
+    width: 95vw;
     height: auto;
+    flex-direction: column;
+    margin-right: 10px;
   }
 
   .evento-imagem-container {
     width: 100%;
     height: 200px;
-  }
-
-  .evento-imagem {
-    border-right: none;
-    border-bottom: 4px solid #FCB900;
   }
 
   .evento-conteudo {
@@ -437,13 +529,100 @@
   }
 
   .evento-titulo {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
-  .evento-descricao {
-    display: block;
-    -webkit-box-orient: unset;
-    white-space: normal;
+  .evento-card.next {
+    transform: none;
+    opacity: 1;
+  }
+
+  .evento-card.next::after {
+    display: none;
+  }
+
+  .girl-jumping {
+    display: none;
+  }
+
+  .yellow-container {
+    margin-top: 800px;
+    height: 80px;
+    order: 4;
+  }
+
+  .duvidas-eventos {
+    padding: 20px;
+    background-position: left center;
+    order: 5;
+  }
+
+  .duvidas-content {
+    flex-direction: column;
+  }
+
+  .girl-duvidas img {
+    height: auto;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    top: 19px;
+  }
+
+  .form-wrapper {
+    justify-content: center;
+  }
+
+  .form-container {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+  .form-title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .form-columns {
+    flex-direction: column;
+  }
+
+  .textarea {
+    height: 150px;
+  }
+
+  .submit-btn {
+    width: 100%;
+  }
+}
+
+/* Ajustes para telas muito pequenas (menos de 480px) */
+@media (max-width: 480px) {
+  .main-img-content {
+    margin-top: -200px;
+  }
+
+  .banner {
+    height: 60px;
+  }
+
+  .banner-text {
+    font-size: 1rem;
+  }
+
+  .evento-imagem-container {
+    height: 150px;
+  }
+
+  .evento-info p {
+    font-size: 0.8rem;
+  }
+
+  .escola-tag {
+    font-size: 0.8rem;
+    padding: 3px 8px;
   }
 
   .inscrever-btn {
@@ -451,22 +630,3 @@
     text-align: center;
   }
 }
-
-@media screen and (max-width: 600px) {
-  .banner-text {
-    font-size: 18px;
-  }
-
-  .evento-titulo {
-    font-size: 1rem;
-  }
-
-  .evento-info, .evento-descricao {
-    font-size: 0.85rem;
-  }
-
-  .escola-tag {
-    font-size: 0.8rem;
-  }
-}
-

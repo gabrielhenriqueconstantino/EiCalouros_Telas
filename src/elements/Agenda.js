@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useCallback, touchStartX, setTouchStartX, isNext } from 'react';
 import '../styles/Agenda.css';
 
 const eventos = [
@@ -66,7 +66,8 @@ const eventos = [
 
 const Agenda = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false); // Estado para controlar pausa
+  const [isPaused, setIsPaused] = useState(false);
+  const [touchStartX, setTouchStartX] = useState(null);
   const carrosselRef = useRef(null);
   const wrapperRef = useRef(null);
   const intervalRef = useRef(null);
@@ -88,7 +89,7 @@ const Agenda = () => {
         if (!isPaused) {
           nextSlide();
         }
-      }, 3500);
+      }, 4000);
     };
 
     startAutoScroll();
@@ -98,23 +99,19 @@ const Agenda = () => {
     };
   }, [isPaused, nextSlide]);
 
+  // MANTIVE SEU CÓDIGO DE POSICIONAMENTO
   useEffect(() => {
     if (carrosselRef.current && wrapperRef.current) {
       const cardWidth = carrosselRef.current.children[0]?.offsetWidth + 20;
-      //const wrapperWidth = wrapperRef.current.offsetWidth;
-      
-      // Calcula a posição para alinhar o card atual à esquerda
       const newPosition = -(currentIndex * cardWidth);
-      
-      // Ajusta para mostrar parte do próximo card
-      const offset = 0; // Espaço para mostrar parte do próximo card
+      const offset = 0;
       const adjustedPosition = newPosition + offset;
       
       carrosselRef.current.style.transform = `translateX(${adjustedPosition}px)`;
     }
   }, [currentIndex]);
 
-  // Adiciona listeners para as teclas de seta
+  // Adiciona listeners para as teclas de seta (NOVO)
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'ArrowRight') {
@@ -130,17 +127,52 @@ const Agenda = () => {
     };
   }, [nextSlide, prevSlide]);
 
-  // Funções para pausar/retomar o carrossel
-  const handleMouseEnter = () => {
+  // Handlers para swipe (toque) - mantido para mobile
+  const handleTouchStart = (e) => {
+    setTouchStartX(e.touches[0].clientX);
     setIsPaused(true);
+    clearInterval(intervalRef.current);
   };
 
-  const handleMouseLeave = () => {
+  const handleTouchMove = (e) => {
+    if (touchStartX === null) return;
+    const touchEndX = e.touches[0].clientX;
+    const diff = touchStartX - touchEndX;
+    
+    if (carrosselRef.current) {
+      const cardWidth = carrosselRef.current.children[0]?.offsetWidth + 20;
+      const newPosition = -(currentIndex * cardWidth);
+      const adjustedPosition = newPosition - diff;
+      
+      carrosselRef.current.style.transform = `translateX(${adjustedPosition}px)`;
+    }
+  };
+
+  const handleTouchEnd = (e) => {
+    if (touchStartX === null) return;
+    const touchEndX = e.changedTouches[0].clientX;
+    const diff = touchStartX - touchEndX;
+    
+    if (diff > 50) {
+      nextSlide();
+    } else if (diff < -50) {
+      prevSlide();
+    }
+    
+    setTouchStartX(null);
     setIsPaused(false);
+    intervalRef.current = setInterval(nextSlide, 4000);
   };
 
   return (
   <section className="agenda">
+    <div className='palestra-img'>
+      <div className='palestra-img-content'>
+        <h2>Agenda Acadêmica</h2>
+        <p>Fique por dentro dos eventos, palestras e atividades que movimentam a nossa comunidade.</p>
+      </div>
+      <img src='./img/evento_background.jpg' alt='main-img'></img>
+    </div>
     <div className='banner'>
       <h3 className="banner-text">Confira os Próximos eventos da Athon!</h3>
     </div>
@@ -152,17 +184,25 @@ const Agenda = () => {
     <div className='yellow-container'></div>
 
     <div className='carrossel-wrapper' ref={wrapperRef}>
-      <div className='carrossel' ref={carrosselRef} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-        {eventos.map((evento, index) => (
-          <EventoCard 
-            key={evento.id} 
-            evento={evento} 
-            isCurrent={index === currentIndex}
-            isNext={index === (currentIndex + 1) % eventos.length}
-          />
-        ))}
+        <div 
+          className='carrossel' 
+          ref={carrosselRef}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
+          {eventos.map((evento, index) => (
+            <EventoCard 
+              key={evento.id} 
+              evento={evento} 
+              isCurrent={index === currentIndex}
+              isNext={index === (currentIndex + 1) % eventos.length} // NOVO
+            />
+          ))}
+        </div>
       </div>
-    </div>
 
     <div className='duvidas-eventos'>
       <div className='duvidas-content'>
@@ -202,6 +242,7 @@ const Agenda = () => {
 );
 };
 
+// Componente EventoCard simplificado
 const EventoCard = ({ evento, isCurrent, isNext }) => {
   const escolas = Array.isArray(evento.escola) ? evento.escola : [evento.escola];
   
