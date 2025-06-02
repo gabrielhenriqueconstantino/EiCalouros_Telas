@@ -7,7 +7,7 @@
   background-image: url('https://img.freepik.com/fotos-gratis/textura-de-papel-branco_1194-2301.jpg?uid=R201628671&ga=GA1.1.2124600143.1747875331&semt=ais_hybrid&w=740');
   background-repeat: no-repeat;
   background-size: 100%;
-  border-top: 3px solid #fff;
+  border-top: 1px solid #fff;
 }
 
 .map-base {
@@ -101,14 +101,19 @@
 /* Blocos interativos */
 .block {
   position: absolute;
-  width: 40px;
-  height: 40px;
+  width: 50px; /* Aumentei um pouco para melhor visualização */
+  height: 50px;
   border-radius: 8px;
   transform: rotateX(10deg) rotateY(10deg);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
   opacity: 0.9;
+  display: flex; /* Adicionado */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  background-color: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente */
+  padding: 5px; /* Espaçamento interno */
 }
 
 .block:hover {
@@ -116,14 +121,31 @@
   opacity: 1;
 }
 
+.block-logo {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.3));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.block-logo img {
+  display: flex;
+  justify-content: center;
+  color: #fff;
+}
+
 /* Posicionamento dos blocos */
 .portaria { top: 40px; left: 140px; background-color: red; }
 .design { top: 120px; left: 110px; background-color: green; }
 .quadra { top: 260px; left: 190px; background-color: purple; }
-.engenharia { top: 300px; left: 120px; background-color: lightblue; }
+.engenharia { top: 300px; left: 120px; background-color: rgb(80, 204, 245); }
 .principal { top: 325px; left: 300px; background-color: black; }
 .biblioteca { top: 230px; left: 290px; background-color: #0074D9; }
 .objetivo { top: 290px; left: 400px; background-color: blue; }
+.alameda { top: 180px; left: 200px; background-color: #20c997; }
 
 .faixa-yellow {
     background: linear-gradient(135deg, rgba(252, 185, 0, 1)); /* amarelo destaque */;
@@ -135,3 +157,267 @@
     display: flex;
     margin-left: -50px;
   }
+
+  /* Estilos para o popup */
+.popup {
+  position: absolute;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  z-index: 100;
+  width: 250px;
+  animation: fadeIn 0.3s ease;
+  border: 2px solid #20c997;
+}
+
+.popup-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup h3 {
+  margin: 0 0 8px 0;
+  color: #333;
+  font-size: 1.2em;
+}
+
+.popup p {
+  margin: 0 0 12px 0;
+  color: #666;
+  font-size: 0.9em;
+}
+
+.popup-images {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.popup-image {
+  width: 50%;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+.portaria-popup img {
+  width: 100%;
+  height: auto;
+}
+
+.quadra-popup img {
+  width: 100%;
+  height: auto;
+}
+
+.alameda-popup img {
+  width: 100%;
+  height: auto;
+}
+
+.alameda-popup {
+  position: absolute;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  z-index: 100;
+  width: 200px;
+  height: auto;
+  animation: fadeIn 0.3s ease;
+  border: 2px solid #20c997;
+}
+
+
+/* Posicionamento dos popups */
+.portaria-popup { top: 40px; left: 190px; }
+.design-popup { top: 120px; left: 170px; }
+.quadra-popup { top: 7px; left: 190px; }
+.engenharia-popup { top: 75px; left: 120px; }
+.principal-popup { top: 120px; left: 300px; }
+.biblioteca-popup { top: -18px; left: 290px; }
+.objetivo-popup { top: 50px; left: 400px; }
+.alameda-popup { top: -7px; left: 250px; }
+
+/* Animação */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Ajuste para os blocos */
+.block {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  transform: rotateX(10deg) rotateY(10deg);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  opacity: 0.9;
+  z-index: 10;
+}
+
+.block:hover {
+  transform: scale(1.1) rotateX(0deg) rotateY(0deg);
+  opacity: 1;
+  z-index: 100;
+}
+
+/* RESPONSIVIDADE PARA DISPOSITIVOS MÓVEIS */
+/* RESPONSIVIDADE PARA DISPOSITIVOS MÓVEIS */
+@media (max-width: 768px) {
+  .map-container {
+    padding: 1rem;
+    margin: 0 auto;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Container perdido e mapa empilhados */
+  .perdido {
+    width: 100%;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  .thought-bubble {
+    padding: 12px;
+    border-radius: 14px;
+    max-width: 90%;
+    margin-right: 0;
+    order: 1; /* Garante que o balão fique acima */
+  }
+
+  .thought-bubble h3 {
+    font-size: 1.1rem;
+  }
+
+  .thought-bubble p {
+    font-size: 0.9rem;
+  }
+
+  /* Remover imagem da pessoa perdida no mobile */
+   .lost-icon,
+  .perdido img {
+    display: none !important; /* !important garante que vai sobrescrever qualquer outra regra */
+  }
+
+  /* Mapa logo abaixo do thought-bubble */
+  .map-base {
+    margin: 0 auto;
+    margin-top: 1rem;
+    margin-left: 0;
+    width: 100%;
+    max-width: 350px;
+    perspective: none;
+    order: 2; /* Garante que o mapa fique abaixo */
+    position: relative;
+  }
+
+  .map-image {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(255, 0, 212, 0.4);
+    border: 1px solid #940499;
+  }
+
+  /* Ajuste dos blocos para mobile */
+  .block {
+    width: 35px;
+    height: 35px;
+    padding: 3px;
+    border-radius: 6px;
+    transform: none;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+  }
+
+  .block-logo {
+    width: 25px;
+    height: 25px;
+  }
+
+  /* Reposicionamento dos blocos (ajuste proporcional) */
+  .portaria { top: 25px; left: 75px; }
+  .design { top: 75px; left: 60px; }
+  .quadra { top: 144px; left: 103px; }
+  .engenharia { top: 165px; left: 50px; }
+  .principal { top: 180px; left: 160px; }
+  .biblioteca { top: 125px; left: 160px; }
+  .objetivo { top: 160px; left: 240px; }
+  .alameda { top: 90px; left: 115px; }
+
+  /* Popups */
+  /* POPUPS COMPACTOS PARA MOBILE */
+  .popup {
+    width: 200px;
+    height: auto;
+    border: 2px solid #20c997;
+    animation: fadeIn 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    padding: 10px; /* Reduzi o padding */
+    font-size: 0.9em; /* Texto um pouco menor */
+  }
+
+ .popup-content {
+  display: flex;
+  flex-direction: column;
+}
+
+  .popup h3 {
+    font-size: 1rem; /* Título menor */
+    margin-bottom: 5px;
+  }
+
+  .popup p {
+    font-size: 0.8rem; /* Texto descritivo menor */
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+
+  .popup-images {
+  display: flex !important;
+  gap: 8px !important;
+  margin-top: 10px !important;
+}
+
+  .popup-image {
+  width: 50%;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+  /* Posicionamento mais ajustado para mobile */
+  .portaria-popup { top: 22px; left: 120px; }
+  .design-popup { top: 75px; left: 110px; }
+  .quadra-popup { top: 140px; left: 150px; }
+  .engenharia-popup { top: 163px; left: 100px; }
+  .principal-popup { top: -10px; left: -5px; }
+  .biblioteca-popup { top: -70px; left: 158px; }
+  .objetivo-popup { top: -30px; left: 76px; }
+  .alameda-popup { top: 135px; left: 150px; }
+
+  .faixa-yellow {
+    margin: 0;
+    width: 100vw !important;
+    height: 60px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    order: 3; /* Garante que fique abaixo de tudo */
+    margin-top: 1rem;
+  }
+
+  /* Remove as bolinhas de conexão no mobile */
+  .bubble-circle {
+    display: none;
+  }
+}
