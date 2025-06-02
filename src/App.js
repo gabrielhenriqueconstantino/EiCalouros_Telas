@@ -7,6 +7,7 @@ import Forum from './elements/Forum.js';
 import Agenda from './elements/Agenda.js';
 import Footer from './elements/Footer.js';
 import { useState } from 'react';
+import Map3D from './elements/Map3D.js';
 
 function App() {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
@@ -78,6 +79,7 @@ function App() {
         <WhatIs />
         <Forum />
         <Agenda />
+        <Map3D />
         <Footer />
 
         {/* Assistente Virtual */}
@@ -152,5 +154,6 @@ function App() {
     </BrowserRouter>
   );
 }
+
 
 export default App;
