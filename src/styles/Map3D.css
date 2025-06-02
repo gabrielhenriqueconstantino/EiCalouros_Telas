@@ -1,23 +1,101 @@
+/* Estilos gerais */
 .map-container {
-  text-align: center;
   padding: 2rem;
   background: #f4f4f4;
+  margin: 0;
+  top: 0;
+  background-color: #192544;
 }
 
 .map-base {
   position: relative;
   display: inline-block;
   perspective: 1000px;
+  margin-top: -450px;
+  margin-left: 100px;
+}
+
+.mapa-texto-h3 {
+  margin-top: -100px;
 }
 
 .map-image {
-  max-width: 100%;
+  width: 600px;
+  height: auto;
   border-radius: 8px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 6px rgba(255, 0, 212, 0.589);
+  border: 1px solid #940499;
 }
 
-/* Blocos posicionados manualmente (ajuste fino pode ser feito depois com base no layout) */
+/* Balão de pensamento moderno */
+.perdido {
+  width: 850px;
+  height: auto;
+}
 
+.thought-bubble {
+  position: relative;
+  background: #20c997;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  margin-right: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.bubble-content {
+  flex: 1;
+}
+
+/* Bolinhas de conexão */
+.bubble-circle {
+  width: 15px;
+  height: 15px;
+  background: #20c997;
+  border-radius: 50%;
+  position: absolute;
+  right: -7px;
+}
+
+.bubble-circle:nth-child(1) { right: -25px; top: 30%; }
+.bubble-circle:nth-child(2) { right: -40px; top: 50%; }
+.bubble-circle:nth-child(3) { right: -25px; top: 70%; }
+
+/* Estilo do ícone e texto */
+.lost-icon {
+  width: 80px;
+  height: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.perdido img {
+  width: 435px;
+  height: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: right;
+  margin-left: 850px;
+  margin-top: -100px;
+}
+
+.thought-bubble h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: 1.3em;
+}
+
+.thought-bubble p {
+  margin: 0;
+  color: #fff;
+  font-size: 1em;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+/* Blocos interativos */
 .block {
   position: absolute;
   width: 40px;
@@ -35,46 +113,22 @@
   opacity: 1;
 }
 
-/* Cores dos blocos com base nas legendas */
+/* Posicionamento dos blocos */
+.portaria { top: 40px; left: 140px; background-color: red; }
+.design { top: 120px; left: 110px; background-color: green; }
+.quadra { top: 260px; left: 190px; background-color: purple; }
+.engenharia { top: 300px; left: 120px; background-color: lightblue; }
+.principal { top: 325px; left: 300px; background-color: black; }
+.biblioteca { top: 230px; left: 290px; background-color: #0074D9; }
+.objetivo { top: 290px; left: 400px; background-color: blue; }
 
-.portaria {
-  top: 25px;
-  left: 130px;
-  background-color: red;
-}
-
-.design {
-  top: 90px;
-  left: 80px;
-  background-color: green;
-}
-
-.quadra {
-  top: 160px;
-  left: 90px;
-  background-color: purple;
-}
-
-.engenharia {
-  top: 190px;
-  left: 130px;
-  background-color: lightblue;
-}
-
-.principal {
-  top: 220px;
-  left: 200px;
-  background-color: black;
-}
-
-.biblioteca {
-  top: 130px;
-  left: 240px;
-  background-color: #0074D9; /* azul */
-}
-
-.objetivo {
-  top: 240px;
-  left: 290px;
-  background-color: blue;
-}
+.faixa-yellow {
+    background: linear-gradient(135deg, rgba(252, 185, 0, 1)); /* amarelo destaque */;
+    width: 100vw;
+    height: 100px;
+    z-index: 1; /* fica atrás da imagem */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+    bottom: 200px;
+    display: flex;
+    margin-left: -50px;
+  }
