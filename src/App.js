@@ -49,7 +49,7 @@ function App() {
   };
 
   const handleAthonClick = () => {
-    window.open('https://www.athonportal.com.br/', '_blank');
+    window.open('https://www.athonportal.com.br/default.asp?tipo=2', '_blank');
   };
 
   const handleScheduleClick = () => {
@@ -113,7 +113,7 @@ function App() {
 
               {showOptions && (
                 <div className="assistant-options">
-                  <button className="btn-response" onClick={() => window.open("https://www.exemplo-calendario.com.br", "_blank")}>
+                  <button className="btn-response" onClick={() => window.open("https://www.athonportal.com.br/docs/Calendario_25_1.pdf", "_blank")}>
                     Calendário Acadêmico
                   </button>
                   <button className="btn-response" onClick={handleScheduleClick}>

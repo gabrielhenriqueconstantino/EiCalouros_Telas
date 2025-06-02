@@ -15,7 +15,7 @@ const Header = () => {
       <nav className="nav">
         <div className="logo">
           <img src="https://athonedu.com.br/wp-content/uploads/2025/05/logo-cw.webp" alt="Logo" />
-        <div className="divider" />
+        <div className="barra-divider" />
         <Link to="/">Ei, Calouro!</Link>
         </div>
           
@@ -33,21 +33,21 @@ const Header = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/projects" onClick={() => setMenuOpen(false)}
+            <NavLink to="/agenda" onClick={() => setMenuOpen(false)}
               className={({ isActive }) => (isActive ? 'active' : '')}>
               Agenda
             </NavLink>
           </li>
           <li>
-            <NavLink to="/blog" onClick={() => setMenuOpen(false)}
+            <NavLink to="/forum" onClick={() => setMenuOpen(false)}
               className={({ isActive }) => (isActive ? 'active' : '')}>
-              Forum
+              Fórum
             </NavLink>
           </li>
           <li>
-            <NavLink to="/contact" onClick={() => setMenuOpen(false)}
+            <NavLink to="/mapa" onClick={() => setMenuOpen(false)}
               className={({ isActive }) => (isActive ? 'active' : '')}>
-              Atlética
+              Mapa
             </NavLink>
           </li>
         </ul>

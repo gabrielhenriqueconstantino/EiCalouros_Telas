@@ -14,10 +14,10 @@ const Footer = () => {
               <Link to="/" className="footer-title">Ei, Calouro!</Link>
               <p className="footer-slogan">Facilitando sua jornada universitária.</p>
               <div className="social-icons">
-                <a href="/" className="social-icon"><i className="fab fa-facebook-f"></i></a>
-                <a href="/" className="social-icon"><i className="fab fa-instagram"></i></a>
-                <a href="/" className="social-icon"><i className="fab fa-linkedin-in"></i></a>
-                <a href="/" className="social-icon"><i className="fab fa-youtube"></i></a>
+                <a href="https://www.facebook.com/AthonEnsinoSuperior/" className="social-icon"><i className="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/athon.ensinosuperior/" className="social-icon"><i className="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/school/athonensinosuperior/" className="social-icon"><i className="fab fa-linkedin-in"></i></a>
+                <a href="https://www.youtube.com/c/athonensinosuperior" className="social-icon"><i className="fab fa-youtube"></i></a>
               </div>
             </div>
           </div>
@@ -29,15 +29,6 @@ const Footer = () => {
                 <li>Rua da Penha, 1.181</li>
                 <li>Centro - Sorocaba/SP</li>
                 <li>(15) 3042-5000</li>
-              </ul>
-            </div>
-
-            <div className="footer-column">
-              <h4 className="footer-heading">Unidade Itu</h4>
-              <ul className="footer-links">
-                <li>Rua Capitão Silvio Fleming, 135</li>
-                <li>Centro - Itu/SP</li>
-                <li>(11) 2429-9077</li>
               </ul>
             </div>
 
