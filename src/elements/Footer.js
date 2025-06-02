@@ -14,10 +14,10 @@ const Footer = () => {
               <Link to="/" className="footer-title">Ei, Calouro!</Link>
               <p className="footer-slogan">Facilitando sua jornada universitária.</p>
               <div className="social-icons">
-                <a href="#" className="social-icon"><i className="fab fa-facebook-f"></i></a>
-                <a href="#" className="social-icon"><i className="fab fa-instagram"></i></a>
-                <a href="#" className="social-icon"><i className="fab fa-linkedin-in"></i></a>
-                <a href="#" className="social-icon"><i className="fab fa-youtube"></i></a>
+                <a href="/" className="social-icon"><i className="fab fa-facebook-f"></i></a>
+                <a href="/" className="social-icon"><i className="fab fa-instagram"></i></a>
+                <a href="/" className="social-icon"><i className="fab fa-linkedin-in"></i></a>
+                <a href="/" className="social-icon"><i className="fab fa-youtube"></i></a>
               </div>
             </div>
           </div>
@@ -74,8 +74,8 @@ const Footer = () => {
           <div className="footer-bottom-content">
             <p>&copy; {new Date().getFullYear()} Athon Ensino Superior. Todos os direitos reservados.</p>
             <div className="legal-links">
-              <a href="#">Política de privacidade</a>
-              <a href="#">Termos de uso</a>
+              <a href="/">Política de privacidade</a>
+              <a href="/">Termos de uso</a>
               <p>Razão Social: Athon Ensino Superior Ltda.</p>
               <p>CNPJ: 03.363.565/0001-21</p>
             </div>
