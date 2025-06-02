@@ -14,7 +14,7 @@ const Header = () => {
     <header className="header">
       <nav className="nav">
         <div className="logo">
-          <img src="https://athonedu.com.br/wp-content/uploads/2025/05/logo-c.webp" alt="Logo" />
+          <img src="https://athonedu.com.br/wp-content/uploads/2025/05/logo-cw.webp" alt="Logo" />
         <div className="divider" />
         <Link to="/">Ei, Calouro!</Link>
         </div>
