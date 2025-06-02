@@ -4,7 +4,10 @@
   background: #f4f4f4;
   margin: 0;
   top: 0;
-  background-color: #192544;
+  background-image: url('https://img.freepik.com/fotos-gratis/textura-de-papel-branco_1194-2301.jpg?uid=R201628671&ga=GA1.1.2124600143.1747875331&semt=ais_hybrid&w=740');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border-top: 3px solid #fff;
 }
 
 .map-base {
