@@ -71,6 +71,13 @@ function App() {
     setRaValue("");
   };
 
+  const handleStructureClick = () => {
+    const section = document.getElementById("estrutura");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <BrowserRouter>
       <div className="App">
@@ -79,7 +86,9 @@ function App() {
         <WhatIs />
         <Forum />
         <Agenda />
-        <Map3D />
+        <div id="estrutura">
+          <Map3D />
+        </div>
         <Footer />
 
         {/* Assistente Virtual */}
@@ -112,6 +121,9 @@ function App() {
                   </button>
                   <button className="btn-response" onClick={handleAthonClick}>
                     Área Restrita Athon
+                  </button>
+                  <button className="btn-response" onClick={handleStructureClick}>
+                    Conheça nossa estrutura
                   </button>
                 </div>
               )}
@@ -154,6 +166,5 @@ function App() {
     </BrowserRouter>
   );
 }
-
 
 export default App;
