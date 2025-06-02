@@ -91,7 +91,7 @@ const Map3D = () => {
         <img src='./img/perdido.png' alt="Ícone de pessoa perdida" className="lost-icon"></img>
       </div>
       
-      <div className='faixa-yellow'>CLIQUE PARA VER!!!!!!!!!!!!!!!</div>
+      <div className='faixa-yellow'></div>
       <div className="map-base">
         <img src="./img/planta_athon.jpg" alt="Mapa da Faculdade" className="map-image" />
         
