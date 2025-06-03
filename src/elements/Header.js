@@ -55,7 +55,7 @@ const Header = () => {
        <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
   <li>
     <a
-      href='#'
+      href='/#'
       onClick={() => {
         ScrollParaInicio();
         setMenuOpen(false);
@@ -68,7 +68,7 @@ const Header = () => {
   </li>
   <li>
     <a
-      href='#'
+      href='/#'
       onClick={() => {
         ScrollParaAgenda();
         setMenuOpen(false);
@@ -80,7 +80,7 @@ const Header = () => {
   </li>
   <li>
     <a
-      href='#'
+      href='/#'
       onClick={() => {
         handleStructureClick();
         setMenuOpen(false);
@@ -92,7 +92,7 @@ const Header = () => {
   </li>
   <li>
     <a
-      href='#'
+      href='/#'
       onClick={() => {
         ScrollParaMapa();
         setMenuOpen(false);
