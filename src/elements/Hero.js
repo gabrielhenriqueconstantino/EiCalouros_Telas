@@ -1,14 +1,6 @@
 import React from 'react';
 import '../styles/Hero.css';
 
-
-const handleStructureClick = () => {
-    const section = document.getElementById("forum");
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
 const Hero = () => {
   return (
     <section className="hero-section fade-in">
