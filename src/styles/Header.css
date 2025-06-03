@@ -178,7 +178,7 @@
   font-size: 1.4rem;
   text-decoration: none;
   font-family: "Impact", sans-serif;
-  font-weight: 100;
+  font-weight: 500;
   transition: transform 0.3s ease;
   display: inline-block; /* necessário para aplicar transform corretamente */
 }
