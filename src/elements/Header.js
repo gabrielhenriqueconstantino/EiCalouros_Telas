@@ -37,6 +37,20 @@ const Header = () => {
     }
   };
 
+  const ScrollParaTutorial = () => {
+    const section = document.getElementById("tutorial");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const ScrollParaFooter = () => {
+    const section = document.getElementById("contato");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <header className="header">
       <nav className="nav">
@@ -70,18 +84,6 @@ const Header = () => {
     <a
       href='/#'
       onClick={() => {
-        ScrollParaAgenda();
-        setMenuOpen(false);
-      }}
-      style={{ cursor: 'pointer' }}
-    >
-      Agenda
-    </a>
-  </li>
-  <li>
-    <a
-      href='/#'
-      onClick={() => {
         handleStructureClick();
         setMenuOpen(false);
       }}
@@ -94,12 +96,48 @@ const Header = () => {
     <a
       href='/#'
       onClick={() => {
+        ScrollParaAgenda();
+        setMenuOpen(false);
+      }}
+      style={{ cursor: 'pointer' }}
+    >
+      Agenda
+    </a>
+  </li>
+  <li>
+    <a
+      href='/#'
+      onClick={() => {
         ScrollParaMapa();
         setMenuOpen(false);
       }}
       style={{ cursor: 'pointer' }}
     >
       Mapa
+    </a>
+  </li>
+  <li>
+    <a
+      href='/#'
+      onClick={() => {
+        ScrollParaTutorial();
+        setMenuOpen(false);
+      }}
+      style={{ cursor: 'pointer' }}
+    >
+      Tutoriais
+    </a>
+  </li>
+  <li>
+    <a
+      href='/#'
+      onClick={() => {
+        ScrollParaFooter();
+        setMenuOpen(false);
+      }}
+      style={{ cursor: 'pointer' }}
+    >
+      Contato
     </a>
   </li>
 </ul>

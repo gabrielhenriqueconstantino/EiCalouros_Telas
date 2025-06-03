@@ -105,12 +105,12 @@ function App() {
       <div className="App">
         <div><Header /></div>
         <div id='inicio' className="section"><Hero /></div>
-        <div className="section"><WhatIs /></div>
-        <div className="section" id='forum'><Forum /></div>
+        <div id='sobre' className="section"><WhatIs /></div>
+        <div id='forum' className="section" ><Forum /></div>
         <div id='agenda' className="section"><Agenda /></div>
         <div id="estrutura" className="section"><Map3D /></div>
-        <div className='section'><Tutorial /></div>
-        <div className="section"><Footer /></div>
+        <div id="tutorial" className='section'><Tutorial /></div>
+        <div id='contato' className="section"><Footer /></div>
 
         {/* Assistente Virtual */}
         <div className="virtual-assistant-container">

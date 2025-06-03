@@ -1,6 +1,20 @@
 import React from 'react';
 import '../styles/Hero.css';
 
+const handleStructureClick = () => {
+    const section = document.getElementById("sobre");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+const Sobre = () => {
+    const section = document.getElementById("sobre");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
 const Hero = () => {
   return (
     <section className="hero-section fade-in">
@@ -10,8 +24,7 @@ const Hero = () => {
           <h1>O manual não oficial do calouro esperto</h1>
           <p>Seu apoio inicial na universidade: informações úteis para organizar sua rotina e aproveitar melhor o início do curso.</p>
           <div className="hero-buttons">
-            <a href="/contact" className="btn btn-primary">Navegue pela Athon</a>
-            <a href="#about" className="btn btn-secondary">Saiba Mais</a>
+            <a href="/#about" className="btn btn-secondary" onClick={(Sobre)}>Saiba Mais</a>
           </div>
         </div>
         <img 

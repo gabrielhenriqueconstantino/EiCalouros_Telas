@@ -62,7 +62,7 @@ const What = () => {
 
         <div className='cool'>
             <h3 className='cool-text'>Muito legal, né?</h3>
-            <p className='cool-text'>Logo abaixo você confere mais detalhes sobre a Athon 👇</p>
+            <p className='cool-text'>Logo abaixo você explora os melhores recursos para sua integração👇</p>
         </div>
 
         <div className='students-pink'>

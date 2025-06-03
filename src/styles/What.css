@@ -5,6 +5,8 @@
   height: auto; /* altura total da seção */
   background-color: #192544;
   overflow: hidden;
+  margin: 0;
+  top: 10px;
 }
 
 .main-img {
