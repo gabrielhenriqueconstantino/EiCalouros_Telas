@@ -177,7 +177,8 @@
   font-weight: bolder;
   font-size: 1.4rem;
   text-decoration: none;
-  font-family: "Shadows Into Light Two", cursive;
+  font-family: "Impact", sans-serif;
+  font-weight: 100;
   transition: transform 0.3s ease;
   display: inline-block; /* necessário para aplicar transform corretamente */
 }

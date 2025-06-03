@@ -102,12 +102,10 @@
 }
 
 .footer-heading {
-  color: #ffffff;
-  font-size: 1.1rem;
-  margin-bottom: 1.2rem;
   position: relative;
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.8rem;
 }
+
 
 .footer-heading::after {
   content: '';
@@ -168,6 +166,7 @@
   border-radius: 0 4px 4px 0;
   cursor: pointer;
   transition: background 0.3s ease;
+  height: 30px;
 }
 
 .newsletter-form button:hover {
@@ -261,9 +260,9 @@
     text-align: center;
   }
 
-  .footer-heading {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
+  .footer-heading::after {
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .footer-links li,
