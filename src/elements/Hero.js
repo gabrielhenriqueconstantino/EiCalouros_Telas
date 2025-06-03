@@ -1,13 +1,6 @@
 import React from 'react';
 import '../styles/Hero.css';
 
-const handleStructureClick = () => {
-    const section = document.getElementById("sobre");
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
 const Sobre = () => {
     const section = document.getElementById("sobre");
     if (section) {
