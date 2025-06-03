@@ -13,6 +13,7 @@ import { useState, useEffect } from 'react';
 
 function App() {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [showYesNoButtons, setShowYesNoButtons] = useState(true);
   const [showOptions, setShowOptions] = useState(false);
   const [assistantMessage, setAssistantMessage] = useState("Oi! Precisa de ajuda com a faculdade? 👋");
@@ -103,7 +104,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <div><Header /></div>
+        <div><Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} /></div>
         <div id='inicio' className="section"><Hero /></div>
         <div id='sobre' className="section"><WhatIs /></div>
         <div id='forum' className="section" ><Forum /></div>
@@ -113,7 +114,9 @@ function App() {
         <div id='contato' className="section"><Footer /></div>
 
         {/* Assistente Virtual */}
-        <div className="virtual-assistant-container">
+        {!menuOpen && (
+
+          <div className="virtual-assistant-container">
           <div className="assistant-bubble" onClick={togglePopup}>
             <img src="/img/robozinho.gif" alt="Assistente Virtual" />
           </div>
@@ -183,6 +186,7 @@ function App() {
             </div>
           )}
         </div>
+        )}
       </div>
     </BrowserRouter>
   );

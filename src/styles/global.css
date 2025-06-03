@@ -88,7 +88,7 @@ body {
   display: flex;
   flex-direction: column-reverse;
   align-items: flex-end;
-  z-index: 1000;
+  z-index: 1000; /* Mantém esse valor */
 }
 
 .assistant-bubble {

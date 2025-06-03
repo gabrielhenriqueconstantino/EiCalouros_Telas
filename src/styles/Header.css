@@ -46,10 +46,9 @@
   font-weight: bolder;
   font-size: 2rem;
   text-decoration: none;
-  font-family: "Impact", sans-serif;
+  font-family: "Shadows Into Light Two", cursive;
   transition: transform 0.3s ease;
   display: inline-block; /* necessário para aplicar transform corretamente */
-  font-weight: 100;
 }
 
 .logo a:hover {
@@ -177,8 +176,7 @@
   font-weight: bolder;
   font-size: 1.4rem;
   text-decoration: none;
-  font-family: "Impact", sans-serif;
-  font-weight: 500;
+  font-family: "Shadows Into Light Two", cursive;
   transition: transform 0.3s ease;
   display: inline-block; /* necessário para aplicar transform corretamente */
 }

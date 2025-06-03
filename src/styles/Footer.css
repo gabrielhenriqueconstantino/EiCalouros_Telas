@@ -53,8 +53,7 @@
   font-weight: 700;
   text-decoration: none;
   margin-bottom: 0.5rem;
-  font-family: "Impact", sans-serif;
-  font-weight: 100;
+  font-family: "Shadows Into Light Two", cursive;
 }
 
 .footer-title:hover {
@@ -301,6 +300,14 @@
   .footer-bottom p {
     font-size: 0.75rem;
   }
+
+  .menu-open .virtual-assistant-container {
+  z-index: 990;
+}
+
+.assistant-popup.behind-menu {
+  z-index: 990;
+}
 }
 
 
