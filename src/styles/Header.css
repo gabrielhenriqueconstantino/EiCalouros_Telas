@@ -179,3 +179,16 @@
   display: inline-block; /* necessário para aplicar transform corretamente */
 }
 }
+.header .nav button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.header .nav button:hover {
+  color: #00bfff;
+}

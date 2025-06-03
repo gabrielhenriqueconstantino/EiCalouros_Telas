@@ -6,7 +6,7 @@ import WhatIs from './elements/What.js';
 import Forum from './elements/Forum.js';
 import Agenda from './elements/Agenda.js';
 import Footer from './elements/Footer.js';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Map3D from './elements/Map3D.js';
 
 function App() {
@@ -78,18 +78,39 @@ function App() {
     }
   };
 
+  useEffect(() => {
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    sections.forEach(section => observer.observe(section));
+
+    return () => {
+      sections.forEach(section => observer.unobserve(section));
+    };
+  }, []);
+
   return (
     <BrowserRouter>
       <div className="App">
-        <Header />
-        <Hero />
-        <WhatIs />
-        <Forum />
-        <Agenda />
-        <div id="estrutura">
+        <div className="section"><Header /></div>
+        <div className="section"><Hero /></div>
+        <div className="section"><WhatIs /></div>
+        <div className="section"><Forum /></div>
+        <div className="section"><Agenda /></div>
+        <div id="estrutura" className="section">
           <Map3D />
         </div>
-        <Footer />
+        
+        <div className="section"><Footer /></div>
 
         {/* Assistente Virtual */}
         <div className="virtual-assistant-container">
