@@ -1,4 +1,3 @@
-// Componente do cabeçalho com navegação e menu hambúrguer para telas pequenas
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import '../styles/Header.css';
@@ -10,47 +9,97 @@ const Header = () => {
     setMenuOpen(!menuOpen);
   };
 
+  const ScrollParaInicio = () => {
+    const section = document.getElementById("inicio");
+    if (section) {
+      section.scrollIntoView({behavior: "smooth"});
+    }
+  };
+
+  const ScrollParaAgenda = () => {
+    const section = document.getElementById("agenda");
+    if (section) {
+      section.scrollIntoView({behavior: "smooth"});
+    }
+  };
+
+  const ScrollParaMapa = () => {
+    const section = document.getElementById("estrutura");
+    if (section) {
+      section.scrollIntoView({behavior: "smooth"});
+    }
+  };
+
+  const handleStructureClick = () => {
+    const section = document.getElementById("forum");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <header className="header">
       <nav className="nav">
         <div className="logo">
           <img src="https://athonedu.com.br/wp-content/uploads/2025/05/logo-cw.webp" alt="Logo" />
-        <div className="barra-divider" />
-        <Link to="/">Ei, Calouro!</Link>
+          <div className="barra-divider" />
+          <Link to="/">Ei, Calouro!</Link>
         </div>
-          
+        
         <div className="hamburger" onClick={toggleMenu}>
           <span className={`bar bar1 ${menuOpen ? 'open' : ''}`}></span>
           <span className={`bar bar2 ${menuOpen ? 'open' : ''}`}></span>
           <span className={`bar bar3 ${menuOpen ? 'open' : ''}`}></span>
         </div>
 
-        <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
-          <li>
-            <NavLink to="/" end onClick={() => setMenuOpen(false)}
-              className={({ isActive }) => (isActive ? 'active' : '')}>
-              Início
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/agenda" onClick={() => setMenuOpen(false)}
-              className={({ isActive }) => (isActive ? 'active' : '')}>
-              Agenda
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/forum" onClick={() => setMenuOpen(false)}
-              className={({ isActive }) => (isActive ? 'active' : '')}>
-              Fórum
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/mapa" onClick={() => setMenuOpen(false)}
-              className={({ isActive }) => (isActive ? 'active' : '')}>
-              Mapa
-            </NavLink>
-          </li>
-        </ul>
+       <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
+  <li>
+    <a
+      onClick={() => {
+        ScrollParaInicio();
+        setMenuOpen(false);
+      }}
+      className="active" // ou remova se não for o link ativo
+      style={{ cursor: 'pointer' }}
+    >
+      Início
+    </a>
+  </li>
+  <li>
+    <a
+      onClick={() => {
+        ScrollParaAgenda();
+        setMenuOpen(false);
+      }}
+      style={{ cursor: 'pointer' }}
+    >
+      Agenda
+    </a>
+  </li>
+  <li>
+    <a
+      onClick={() => {
+        handleStructureClick();
+        setMenuOpen(false);
+      }}
+      style={{ cursor: 'pointer' }}
+    >
+      Fórum
+    </a>
+  </li>
+  <li>
+    <a
+      onClick={() => {
+        ScrollParaMapa();
+        setMenuOpen(false);
+      }}
+      style={{ cursor: 'pointer' }}
+    >
+      Mapa
+    </a>
+  </li>
+</ul>
+
       </nav>
     </header>
   );

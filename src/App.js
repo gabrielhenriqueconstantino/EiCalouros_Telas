@@ -5,9 +5,11 @@ import Hero from './elements/Hero';
 import WhatIs from './elements/What.js';
 import Forum from './elements/Forum.js';
 import Agenda from './elements/Agenda.js';
+import Map3D from './elements/Map3D.js';
+import Tutorial from './elements/Tutorial.js';
 import Footer from './elements/Footer.js';
 import { useState, useEffect } from 'react';
-import Map3D from './elements/Map3D.js';
+
 
 function App() {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
@@ -101,15 +103,13 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <div className="section"><Header /></div>
-        <div className="section"><Hero /></div>
+        <div><Header /></div>
+        <div id='inicio' className="section"><Hero /></div>
         <div className="section"><WhatIs /></div>
-        <div className="section"><Forum /></div>
-        <div className="section"><Agenda /></div>
-        <div id="estrutura" className="section">
-          <Map3D />
-        </div>
-        
+        <div className="section" id='forum'><Forum /></div>
+        <div id='agenda' className="section"><Agenda /></div>
+        <div id="estrutura" className="section"><Map3D /></div>
+        <div className='section'><Tutorial /></div>
         <div className="section"><Footer /></div>
 
         {/* Assistente Virtual */}

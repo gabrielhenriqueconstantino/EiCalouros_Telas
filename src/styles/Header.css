@@ -2,12 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap');
 
 .header {
-  background-color: #20c997;
-  padding: 1rem 2rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-  position: sticky;
+  position: fixed;
   top: 0;
+  width: 100%;
+  height: auto;
+  padding: 1rem 2rem;
+  background-color: #20c997;
   z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  
 }
 
 .nav {
@@ -16,7 +19,8 @@
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  display: flex;
+  /* Remova esta linha também: */
+  /* position: sticky; */
 }
 
 .logo {
@@ -71,7 +75,6 @@
 .nav-links li a.active {
   color: rgb(245, 210, 10); /* amarelo destaque */
 }
-
 
 /* Estilos para o menu hambúrguer responsivo */
 .hamburger {
