@@ -98,30 +98,3 @@ Contribuições são bem-vindas! Siga os passos:
 3. Commit suas alterações (`git commit -m 'Adiciona nova feature'`)  
 4. Push para a branch (`git push origin feature/nova-feature`)  
 5. Abra um Pull Request  
-
----
-
-## 📬 Contato  
-
-Para dúvidas ou sugestões, entre em contato:  
-✉️ **Email:** seu-email@exemplo.com  
-🌐 **GitHub:** [@seu-usuario](https://github.com/seu-usuario)  
-
----
-
-**Desenvolvido com ❤️ por [Seu Nome]** 🚀
-```
-
-### Observações importantes:
-1. Substitua os placeholders:
-   - `https://github.com/seu-usuario/ei-calouro.git` pelo link real do seu repositório
-   - `seu-email@exemplo.com` pelo seu e-mail de contato
-   - `@seu-usuario` pelo seu username do GitHub
-   - `[Seu Nome]` pelo seu nome ou nome da equipe
-
-2. Certifique-se de ter um arquivo `LICENSE` no seu repositório se for usar a licença MIT.
-
-3. Para melhor visualização no GitHub:
-   - Os emojis aparecerão corretamente
-   - A estrutura de diretórios será formatada como código
-   - Os comandos aparecerão em blocos de código destacados
