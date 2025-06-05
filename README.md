@@ -1,70 +1,127 @@
-# Getting Started with Create React App
+# Documentação do Projeto "EI Calouro"  
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 📌 Visão Geral  
 
-## Available Scripts
+O **EI Calouro** é uma plataforma desenvolvida em **React** e **CSS** que visa auxiliar calouros em sua adaptação ao ambiente acadêmico. O projeto oferece uma interface intuitiva com informações úteis para novos estudantes, como guias, cronogramas e dicas essenciais.  
 
-In the project directory, you can run:
+🔗 **Link do Projeto Hospedado:** [https://ei-calouro-telas.netlify.app/](https://ei-calouro-telas.netlify.app/)  
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🛠️ Tecnologias Utilizadas  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **React** (Biblioteca JavaScript para construção de interfaces)  
+- **CSS** (Estilização personalizada)  
+- **React Router** (Navegação entre páginas)  
+- **Netlify** (Hospedagem e deploy contínuo)  
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## � Como Executar o Projeto Localmente  
 
-### `npm run build`
+### Pré-requisitos  
+- Node.js (v16 ou superior)  
+- npm ou yarn  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Passos  
+1. **Clone o repositório**  
+   ```sh
+   git clone https://github.com/seu-usuario/ei-calouro.git
+   ```  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **Instale as dependências**  
+   ```sh
+   npm install
+   # ou
+   yarn install
+   ```  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. **Inicie o servidor de desenvolvimento**  
+   ```sh
+   npm start
+   # ou
+   yarn start
+   ```  
 
-### `npm run eject`
+4. **Acesse a aplicação**  
+   Abra [http://localhost:3000](http://localhost:3000) no seu navegador.  
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📂 Estrutura do Projeto  
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
+ei-calouro/  
+├── public/            # Arquivos estáticos (HTML, imagens)  
+├── src/  
+│   ├── components/    # Componentes reutilizáveis  
+│   ├── pages/         # Páginas da aplicação  
+│   ├── styles/        # Arquivos CSS  
+│   ├── App.js         # Configuração das rotas  
+│   └── index.js       # Ponto de entrada  
+├── package.json       # Dependências e scripts  
+└── README.md          # Documentação  
+```  
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 🎨 Design e Responsividade  
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+O projeto foi desenvolvido com foco em:  
+✅ **Design moderno e intuitivo**  
+✅ **Responsividade (mobile e desktop)**  
+✅ **Navegação fluida**  
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## 🌐 Deploy no Netlify  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+O deploy foi configurado para atualização automática sempre que houver alterações no repositório.  
 
-### Analyzing the Bundle Size
+🔧 **Configuração do Netlify:**  
+- Build command: `npm run build`  
+- Publish directory: `build/`  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## 📜 Licença  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Este projeto está sob a licença **MIT**. Consulte o arquivo [LICENSE](LICENSE) para mais detalhes.  
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🤝 Contribuição  
 
-### Deployment
+Contribuições são bem-vindas! Siga os passos:  
+1. Faça um fork do projeto  
+2. Crie uma branch (`git checkout -b feature/nova-feature`)  
+3. Commit suas alterações (`git commit -m 'Adiciona nova feature'`)  
+4. Push para a branch (`git push origin feature/nova-feature`)  
+5. Abra um Pull Request  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## 📬 Contato  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Para dúvidas ou sugestões, entre em contato:  
+✉️ **Email:** seu-email@exemplo.com  
+🌐 **GitHub:** [@seu-usuario](https://github.com/seu-usuario)  
+
+---
+
+**Desenvolvido com ❤️ por [Seu Nome]** 🚀
+```
+
+### Observações importantes:
+1. Substitua os placeholders:
+   - `https://github.com/seu-usuario/ei-calouro.git` pelo link real do seu repositório
+   - `seu-email@exemplo.com` pelo seu e-mail de contato
+   - `@seu-usuario` pelo seu username do GitHub
+   - `[Seu Nome]` pelo seu nome ou nome da equipe
+
+2. Certifique-se de ter um arquivo `LICENSE` no seu repositório se for usar a licença MIT.
+
+3. Para melhor visualização no GitHub:
+   - Os emojis aparecerão corretamente
+   - A estrutura de diretórios será formatada como código
+   - Os comandos aparecerão em blocos de código destacados
