@@ -54,7 +54,7 @@ O **EI Calouro** é uma plataforma desenvolvida em **React** e **CSS** que visa 
 ei-calouro/  
 ├── public/            # Arquivos estáticos (HTML, imagens)  
 ├── src/  
-│   ├── components/    # Componentes reutilizáveis  
+│   ├── elements/    # Componentes reutilizáveis  
 │   ├── pages/         # Páginas da aplicação  
 │   ├── styles/        # Arquivos CSS  
 │   ├── App.js         # Configuração das rotas  
